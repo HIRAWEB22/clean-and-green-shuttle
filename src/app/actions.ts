@@ -8,6 +8,8 @@ import type {
   OptimizeShuttleRoutesInput,
   OptimizeShuttleRoutesOutput,
   ChatbotInput,
+  ChatbotOutput,
+  Message,
 } from '@/ai/schemas';
 
 export type OptimizeFormState = {
@@ -17,10 +19,7 @@ export type OptimizeFormState = {
 };
 
 export type ChatbotState = {
-  messages: {
-    role: 'user' | 'model';
-    content: string;
-  }[];
+  messages: Message[];
 };
 
 export async function getOptimizedRoutes(
