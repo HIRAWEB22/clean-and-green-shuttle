@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -9,6 +10,7 @@ import {
   Shield,
   PanelLeft,
   Menu,
+  BookUser,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -21,6 +23,7 @@ const navLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/track", label: "Track", icon: Map },
   { href: "/sustainability", label: "Sustainability", icon: Leaf },
+  { href: "/about", label: "About", icon: BookUser },
   { href: "/feedback", label: "Feedback", icon: MessageSquare },
   { href: "/admin", label: "Admin", icon: Shield },
 ];
