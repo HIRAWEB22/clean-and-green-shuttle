@@ -36,6 +36,17 @@ const fleet = [
       'Runs every 10 minutes',
     ],
   },
+  {
+    name: 'Islamabad City Connect',
+    description:
+      'Serving the local community by connecting key areas of Islamabad with our campus.',
+    image: images['shuttle-in-city'],
+    features: [
+      'Connects campus to BRT stations',
+      'Affordable fares for all',
+      'Runs every 30 minutes',
+    ],
+  },
 ];
 
 const testimonials = [
@@ -88,7 +99,7 @@ export default function Home() {
             Clean & Green Shuttle Service
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-200 mb-8">
-            The future of campus mobility is here. Clean, efficient, and always
+            The future of campus and city mobility is here. Clean, efficient, and always
             on time.
           </p>
           <Button
@@ -109,15 +120,15 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">Meet Our Fleet</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              State-of-the-art electric shuttles for a modern campus
-              experience.
+              State-of-the-art electric shuttles for campus and city-wide
+              transport.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {fleet.map(shuttle => (
               <Card
                 key={shuttle.name}
-                className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group max-w-2xl"
+                className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
                 {shuttle.image && (
                   <div className="relative h-64 w-full overflow-hidden">
@@ -180,10 +191,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
-              What Our Students Say
+              What Our Riders Say
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real stories from students who love our shuttle service.
+              Real stories from students and locals who love our shuttle service.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
