@@ -47,6 +47,12 @@
       "description": "The official logo for Clean and Green Shuttle Service.",
       "imageUrl": "https://storage.googleapis.com/stabl-media/logos/1f53b593-41a6-46c5-9335-182390a78637.png",
       "imageHint": "company logo"
+    },
+    {
+      "id": "shuttle-in-city",
+      "description": "An electric shuttle bus driving on a city street.",
+      "imageUrl": "https://images.unsplash.com/photo-1626834310149-15a1d1a8582f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGJ1c3xlbnwwfHx8fDE3MjE4MzI3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "electric bus"
     }
   ]
 }

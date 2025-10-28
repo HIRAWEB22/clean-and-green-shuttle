@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AnimatedCounter } from '@/components/animated-counter';
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
+import { ImpactCarousel } from '@/components/home/impact-carousel';
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -60,6 +61,13 @@ const testimonials = [
     avatar: images['testimonial-3'],
   },
 ];
+
+const impactSlides = [
+  images['hero-shuttle'],
+  images['shuttle-main-campus'],
+  images['shuttle-in-city'],
+].filter(Boolean);
+
 
 export default function Home() {
   return (
@@ -148,19 +156,21 @@ export default function Home() {
       </section>
 
       {/* CO2 Saved Counter Section */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground">
+      <section className="relative py-20 md:py-28 text-white">
+        <ImpactCarousel slides={impactSlides} />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative container text-center z-10">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Our Collective Impact
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-neutral-200 max-w-2xl mx-auto">
             Every ride contributes to a cleaner, greener campus for everyone.
           </p>
-          <div className="mt-8 bg-card p-8 rounded-lg shadow-xl inline-block">
-            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">
+          <div className="mt-8 bg-white/20 backdrop-blur-sm p-8 rounded-lg shadow-xl inline-block">
+            <p className="text-sm font-medium uppercase tracking-widest text-neutral-100">
               CO₂ Saved (in kg)
             </p>
-            <div className="text-6xl md:text-7xl font-bold text-primary mt-2">
+            <div className="text-6xl md:text-7xl font-bold text-white mt-2">
               <AnimatedCounter targetValue={12543} />
             </div>
           </div>
