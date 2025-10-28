@@ -74,16 +74,14 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            data-ai-hint={heroImage.imageHint}
-            fill
-            className="object-cover"
-            priority
-          />
-        )}
+        <video
+            src="https://storage.googleapis.com/static-www.sandbox.google.com/for-devrel/videos/shuttle.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col items-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-shadow-lg">
