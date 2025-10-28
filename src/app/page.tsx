@@ -92,7 +92,7 @@ export default function Home() {
       <section id="features" className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Why Use Campus Cruiser?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why Use Our Shuttle Service?</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               We provide the best campus transportation experience with a focus on sustainability, safety, and accessibility.
             </p>
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">What Our Students Say</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real stories from students who love Campus Cruiser.
+              Real stories from students who love our shuttle service.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

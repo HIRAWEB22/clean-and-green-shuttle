@@ -36,7 +36,7 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
       fontWeight="600"
       fill="hsl(var(--foreground))"
     >
-      Campus Cruiser
+      Clean & Green
     </text>
   </svg>
 );

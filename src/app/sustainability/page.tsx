@@ -81,7 +81,7 @@ export default function SustainabilityPage() {
             Our Commitment to a Green Campus
           </h1>
           <p className="mt-4 text-lg max-w-3xl mx-auto">
-            Campus Cruiser is more than a ride. It's a promise for a
+            Our shuttle service is more than a ride. It's a promise for a
             sustainable future.
           </p>
         </div>

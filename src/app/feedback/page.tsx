@@ -12,7 +12,7 @@ const contactDetails = [
   {
     icon: <Mail className="h-6 w-6 text-primary" />,
     title: "Email Support",
-    value: "support@campuscruiser.edu",
+    value: "support@cleanandgreen.edu",
     description: "For suggestions & complaints.",
   },
   {
@@ -31,8 +31,7 @@ export default function FeedbackPage() {
           Get In Touch
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          We value your feedback. Let us know how we can improve the Campus
-          Cruiser service.
+          We value your feedback. Let us know how we can improve the Clean and Green Shuttle Service.
         </p>
       </div>
 

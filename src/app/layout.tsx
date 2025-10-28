@@ -22,7 +22,7 @@ const fontBody = PT_Sans({
 
 
 export const metadata: Metadata = {
-  title: "Campus Cruiser",
+  title: "Clean and Green Shuttle Service",
   description: "Ride Green. Ride Smart. The future of campus mobility.",
 };
 

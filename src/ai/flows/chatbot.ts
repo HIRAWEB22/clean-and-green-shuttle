@@ -1,6 +1,6 @@
 'use server';
 /**
- * @fileOverview A conversational AI chatbot for the Campus Cruiser website.
+ * @fileOverview A conversational AI chatbot for the Clean and Green Shuttle Service website.
  *
  * - chatbot - A function that powers the conversational AI.
  */
@@ -21,7 +21,7 @@ const chatbotPrompt = ai.definePrompt({
   name: 'chatbotPrompt',
   input: {schema: ChatbotInputSchema},
   output: {schema: ChatbotOutputSchema},
-  prompt: `You are a helpful AI assistant for "Campus Cruiser," a university shuttle service. Your goal is to provide friendly and accurate information to students and staff.
+  prompt: `You are a helpful AI assistant for "Clean and Green Shuttle Service," a university shuttle service. Your goal is to provide friendly and accurate information to students and staff.
 
 Answer questions about:
 - Shuttle routes and stops

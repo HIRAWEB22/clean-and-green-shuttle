@@ -95,7 +95,7 @@ export default function TrackPage() {
           Live Shuttle Tracker
         </h1>
         <p className="mt-2 text-lg text-muted-foreground">
-          Follow the Campus Cruiser in real-time.
+          Follow the shuttle in real-time.
         </p>
       </div>
 

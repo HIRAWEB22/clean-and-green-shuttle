@@ -16,7 +16,7 @@ const initialState: ChatbotState = {
   messages: [
     {
       role: "model",
-      content: "Hi! I'm the Campus Cruiser assistant. How can I help you today?",
+      content: "Hi! I'm the Clean and Green Shuttle Service assistant. How can I help you today?",
     },
   ],
 };
@@ -70,7 +70,7 @@ export function Chatbot() {
             <header className="p-4 border-b flex items-center gap-3">
               <Bot className="h-8 w-8 text-primary" />
               <div>
-                <h3 className="font-bold text-lg">Campus Cruiser Bot</h3>
+                <h3 className="font-bold text-lg">Shuttle Service Bot</h3>
                 <p className="text-sm text-muted-foreground">Your friendly campus assistant</p>
               </div>
             </header>
