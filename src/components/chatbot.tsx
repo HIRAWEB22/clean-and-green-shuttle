@@ -1,8 +1,8 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { Bot, MessageSquare, Send, X, User } from "lucide-react";
 
 import { sendMessage, type ChatbotState } from "@/app/actions";
@@ -33,7 +33,7 @@ function SubmitButton() {
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [state, formAction] = useActionState(sendMessage, initialState);
+  const [state, formAction] = useFormState(sendMessage, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
@@ -131,3 +131,5 @@ export function Chatbot() {
     </>
   );
 }
+
+    

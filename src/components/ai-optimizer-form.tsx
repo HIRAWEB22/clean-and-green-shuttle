@@ -1,8 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { Bot, GitBranch, TrafficCone, Users, Plus, X } from "lucide-react";
 
 import { getOptimizedRoutes } from "@/app/actions";
@@ -46,7 +46,7 @@ function SubmitButton() {
 }
 
 export function AiOptimizerForm() {
-  const [state, formAction] = useActionState(getOptimizedRoutes, initialState);
+  const [state, formAction] = useFormState(getOptimizedRoutes, initialState);
 
   const [passengerDemand, setPassengerDemand] = useState(defaultPassengerDemand);
   const [trafficConditions, setTrafficConditions] = useState(defaultTrafficConditions);
@@ -241,3 +241,5 @@ export function AiOptimizerForm() {
     </form>
   );
 }
+
+    
