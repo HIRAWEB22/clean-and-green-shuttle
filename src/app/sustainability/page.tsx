@@ -65,7 +65,7 @@ const sdgs = [
 export default function SustainabilityPage() {
   return (
     <>
-      <section className="relative h-[40vh] w-full flex items-center justify-center text-center text-white">
+      <section className="relative h-[50vh] w-full flex items-center justify-center text-center text-white">
         {bannerImage && (
           <Image
             src={bannerImage.imageUrl}
