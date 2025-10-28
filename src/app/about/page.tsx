@@ -20,9 +20,6 @@ const images: Record<string, ImagePlaceholder> =
   }, {} as Record<string, ImagePlaceholder>);
 
 const bannerImage = images['sustainability-banner'];
-const challengeImage = images['about-challenge'];
-const solutionImage = images['about-solution'];
-
 
 const challenges = [
   {
@@ -90,19 +87,15 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-
+      
       <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-                <div className="text-left">
-                    <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
-                    <p className="mt-2 text-muted-foreground">
-                        Our campus community faces key transportation issues that impact student life.
-                    </p>
-                </div>
-                <div className="space-y-6">
-                    {challenges.map(item => (
+        <div className="container text-center max-w-4xl">
+            <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+                Our campus community faces key transportation issues that impact student life.
+            </p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+                {challenges.map(item => (
                     <div key={item.title} className="flex items-start gap-4">
                         <div className="bg-primary/10 p-3 rounded-full mt-1">
                             {item.icon}
@@ -112,47 +105,19 @@ export default function AboutPage() {
                             <p className="text-muted-foreground">{item.description}</p>
                         </div>
                     </div>
-                    ))}
-                </div>
+                ))}
             </div>
-            {challengeImage && (
-                <div className="relative h-80 md:h-full w-full rounded-lg overflow-hidden shadow-xl">
-                    <Image
-                        src={challengeImage.imageUrl}
-                        alt={challengeImage.description}
-                        data-ai-hint={challengeImage.imageHint}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-            )}
-          </div>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {solutionImage && (
-                <div className="relative h-80 md:h-full w-full rounded-lg overflow-hidden shadow-xl order-last md:order-first">
-                    <Image
-                        src={solutionImage.imageUrl}
-                        alt={solutionImage.description}
-                        data-ai-hint={solutionImage.imageHint}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-            )}
-            <div className="space-y-6">
-                <div className="text-left">
-                    <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line</h2>
-                    <p className="mt-2 text-muted-foreground">
-                        Our electric fleet delivers social, environmental, and financial benefits.
-                    </p>
-                </div>
-                <div className="space-y-6">
-                    {solutions.map(item => (
+        <div className="container text-center max-w-4xl">
+            <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+                Our electric fleet delivers social, environmental, and financial benefits.
+            </p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+                {solutions.map(item => (
                     <div key={item.title} className="flex items-start gap-4">
                         <div className="bg-primary/10 p-3 rounded-full mt-1">
                             {item.icon}
@@ -162,13 +127,11 @@ export default function AboutPage() {
                             <p className="text-muted-foreground">{item.description}</p>
                         </div>
                     </div>
-                    ))}
-                </div>
+                ))}
             </div>
-          </div>
         </div>
       </section>
-
+      
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="bg-card p-10 rounded-xl shadow-lg border">
