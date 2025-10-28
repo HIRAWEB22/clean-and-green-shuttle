@@ -7,6 +7,7 @@ import {
   Accessibility,
   Shield,
   Coins,
+  CheckCircle,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import imageData from '@/lib/placeholder-images.json';
@@ -19,22 +20,25 @@ const images: Record<string, ImagePlaceholder> =
   }, {} as Record<string, ImagePlaceholder>);
 
 const bannerImage = images['sustainability-banner'];
+const challengeImage = images['about-challenge'];
+const solutionImage = images['about-solution'];
+
 
 const challenges = [
   {
-    icon: <Coins className="h-10 w-10 text-primary" />,
+    icon: <Coins className="h-8 w-8 text-primary" />,
     title: 'Affordability',
     description:
       'High travel costs create a financial burden on students, limiting their campus activities and participation.',
   },
   {
-    icon: <Shield className="h-10 w-10 text-primary" />,
+    icon: <Shield className="h-8 w-8 text-primary" />,
     title: 'Safety & Health',
     description:
       'Reliance on external public transport poses health risks and safety concerns, especially for female students.',
   },
   {
-    icon: <Accessibility className="h-10 w-10 text-primary" />,
+    icon: <Accessibility className="h-8 w-8 text-primary" />,
     title: 'Accessibility',
     description:
       'The "last-mile" gap between public transport and campus facilities hinders access for many students, including those with disabilities.',
@@ -43,19 +47,19 @@ const challenges = [
 
 const solutions = [
   {
-    icon: <Heart className="h-10 w-10 text-primary" />,
+    icon: <Heart className="h-8 w-8 text-primary" />,
     title: 'People',
     description:
       'Enhancing student well-being, safety, and equitable access for all, including those with disabilities.',
   },
   {
-    icon: <Globe className="h-10 w-10 text-primary" />,
+    icon: <Globe className="h-8 w-8 text-primary" />,
     title: 'Planet',
     description:
       'Reducing our carbon footprint and contributing to a sustainable campus environment for future generations.',
   },
   {
-    icon: <DollarSign className="h-10 w-10 text-primary" />,
+    icon: <DollarSign className="h-8 w-8 text-primary" />,
     title: 'Profit',
     description:
       'Creating a financially stable, efficient, and scalable service that reduces long-term operational costs.',
@@ -89,71 +93,98 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-              Our campus community faces several key transportation challenges
-              that impact student life and well-being.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {challenges.map(item => (
-              <Card key={item.title} className="text-center shadow-lg">
-                <CardHeader className="items-center">
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    {item.icon}
-                  </div>
-                  <CardTitle className="mt-4">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+                <div className="text-left">
+                    <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
+                    <p className="mt-2 text-muted-foreground">
+                        Our campus community faces key transportation issues that impact student life.
+                    </p>
+                </div>
+                <div className="space-y-6">
+                    {challenges.map(item => (
+                    <div key={item.title} className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full mt-1">
+                            {item.icon}
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg">{item.title}</h3>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
+            {challengeImage && (
+                <div className="relative h-80 md:h-full w-full rounded-lg overflow-hidden shadow-xl">
+                    <Image
+                        src={challengeImage.imageUrl}
+                        alt={challengeImage.description}
+                        data-ai-hint={challengeImage.imageHint}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            )}
           </div>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-              The "Clean & Green Shuttle Service" is an electric fleet designed to deliver social, environmental, and financial benefits, creating a sustainable asset for the university.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutions.map(item => (
-              <Card key={item.title} className="text-center shadow-lg">
-                <CardHeader className="items-center">
-                   <div className="bg-primary/10 p-4 rounded-full">
-                    {item.icon}
-                  </div>
-                  <CardTitle className="mt-4">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+           <div className="grid md:grid-cols-2 gap-12 items-center">
+            {solutionImage && (
+                <div className="relative h-80 md:h-full w-full rounded-lg overflow-hidden shadow-xl order-last md:order-first">
+                    <Image
+                        src={solutionImage.imageUrl}
+                        alt={solutionImage.description}
+                        data-ai-hint={solutionImage.imageHint}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            )}
+            <div className="space-y-6">
+                <div className="text-left">
+                    <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line</h2>
+                    <p className="mt-2 text-muted-foreground">
+                        Our electric fleet delivers social, environmental, and financial benefits.
+                    </p>
+                </div>
+                <div className="space-y-6">
+                    {solutions.map(item => (
+                    <div key={item.title} className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full mt-1">
+                            {item.icon}
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-lg">{item.title}</h3>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                To provide safe, reliable, and sustainable transportation that enhances campus accessibility and student well-being, fostering a more connected and equitable community.
-              </p>
-            </div>
-            <div className="text-center md:text-left">
-               <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                To be a leader in campus mobility by creating an innovative, eco-friendly transit system that serves as a model for universities worldwide.
-              </p>
+          <div className="bg-card p-10 rounded-xl shadow-lg border">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-center md:text-left">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  To provide safe, reliable, and sustainable transportation that enhances campus accessibility and student well-being.
+                </p>
+              </div>
+               <div className="border-t md:border-l md:border-t-0 md:pl-8 pt-8 md:pt-0">
+                 <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
+                <p className="mt-4 text-lg text-muted-foreground">
+                  To be a leader in campus mobility by creating an innovative, eco-friendly transit system that serves as a model for universities worldwide.
+                </p>
+              </div>
             </div>
           </div>
         </div>
