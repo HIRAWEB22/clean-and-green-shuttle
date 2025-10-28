@@ -7,7 +7,6 @@ import { Bot, GitBranch, TrafficCone, Users, Plus, X } from "lucide-react";
 
 import { getOptimizedRoutes } from "@/app/actions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -54,7 +53,6 @@ export function AiOptimizerForm() {
   const [currentRoutes, setCurrentRoutes] = useState(defaultCurrentRoutes);
 
   const handleFormAction = (formData: FormData) => {
-    // Create JSON strings from state and add them to formData
     const passengerDemandJSON = JSON.stringify(
       passengerDemand.map(({ id, ...rest }) => rest)
     );
@@ -62,7 +60,7 @@ export function AiOptimizerForm() {
       trafficConditions.map(({ id, ...rest }) => rest)
     );
     const routesData = currentRoutes.reduce((acc, shuttle) => {
-        acc[shuttle.shuttleName.toLowerCase().replace(" ", "_")] = {
+        acc[shuttle.shuttleName.toLowerCase().replace(/ /g, "_")] = {
             route: shuttle.route.split(',').map(s => s.trim()),
             frequency_minutes: shuttle.frequency
         };
@@ -124,8 +122,8 @@ export function AiOptimizerForm() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-             {passengerDemand.map((item, index) => (
-                <div key={item.id} className="flex items-center gap-2">
+             {passengerDemand.map((item) => (
+                <div key={item.id} className="flex items-center gap-2 p-3 border rounded-lg">
                     <Input placeholder="Stop Name" value={item.stop} onChange={(e) => handleDemandChange(item.id, 'stop', e.target.value)} />
                     <Input type="number" placeholder="Demand" value={item.demand} onChange={(e) => handleDemandChange(item.id, 'demand', parseInt(e.target.value) || 0)} className="w-28" />
                     <Button variant="ghost" size="icon" onClick={() => removeDemandRow(item.id)}><X className="h-4 w-4" /></Button>
@@ -146,10 +144,10 @@ export function AiOptimizerForm() {
           </CardHeader>
           <CardContent className="space-y-3">
             {trafficConditions.map(item => (
-                <div key={item.id} className="flex items-center gap-2">
+                <div key={item.id} className="flex items-center gap-2 p-3 border rounded-lg">
                     <Input placeholder="Route (e.g., Stop A to Stop B)" value={item.route} onChange={(e) => handleTrafficChange(item.id, 'route', e.target.value)} />
                     <Select value={item.congestion} onValueChange={(value) => handleTrafficChange(item.id, 'congestion', value)}>
-                        <SelectTrigger className="w-40">
+                        <SelectTrigger className="w-[180px]">
                             <SelectValue placeholder="Congestion" />
                         </SelectTrigger>
                         <SelectContent>
@@ -179,7 +177,7 @@ export function AiOptimizerForm() {
                  <div key={item.id} className="p-3 border rounded-lg space-y-2">
                      <div className="flex items-center gap-2">
                         <Input placeholder="Shuttle Name (e.g., Shuttle 1)" value={item.shuttleName} onChange={(e) => handleRouteChange(item.id, 'shuttleName', e.target.value)} />
-                        <Input type="number" placeholder="Frequency (mins)" value={item.frequency} onChange={(e) => handleRouteChange(item.id, 'frequency', parseInt(e.target.value) || 0)} className="w-36" />
+                        <Input type="number" placeholder="Frequency (mins)" value={item.frequency} onChange={(e) => handleRouteChange(item.id, 'frequency', parseInt(e.target.value) || 0)} className="w-[180px]" />
                         <Button variant="ghost" size="icon" onClick={() => removeRouteRow(item.id)}><X className="h-4 w-4" /></Button>
                      </div>
                      <Input placeholder="Route stops, comma-separated" value={item.route} onChange={(e) => handleRouteChange(item.id, 'route', e.target.value)}/>
@@ -243,5 +241,3 @@ export function AiOptimizerForm() {
     </form>
   );
 }
-
-    
