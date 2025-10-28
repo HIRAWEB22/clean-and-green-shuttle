@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Logo from "@/components/logo";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home", icon: Home },
@@ -63,7 +64,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="mr-4 hidden md:flex flex-1 items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo />
           </Link>
@@ -72,6 +73,9 @@ export function Header() {
               <NavLink key={link.href} {...link} />
             ))}
           </nav>
+          <div className="flex flex-1 items-center justify-end">
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="flex flex-1 items-center justify-between md:hidden">
@@ -95,6 +99,9 @@ export function Header() {
                     <NavLink key={link.href} {...link} className="text-base" />
                   ))}
                 </nav>
+                <div className="mt-8">
+                  <ThemeToggle />
+                </div>
               </div>
             </SheetContent>
           </Sheet>
