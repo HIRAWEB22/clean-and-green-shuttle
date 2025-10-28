@@ -179,13 +179,13 @@ export default function SustainabilityPage() {
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
                 Our initiative actively contributes to the United Nations Sustainable Development Goals (SDGs), making a global impact from our campus.
             </p>
-            <div className="mt-10 flex justify-center gap-6 md:gap-10 flex-wrap">
+            <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
-                    <div key={goal.id} className="flex flex-col items-center max-w-[150px]">
-                        <div className="bg-accent p-4 rounded-full shadow-md">
-                            <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={80} height={80} className="rounded-full"/>
-                        </div>
-                        <h4 className="mt-4 font-semibold text-sm">{goal.title}</h4>
+                    <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
+                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                            <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
+                        </a>
+                        <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
                     </div>
                 ))}
             </div>
