@@ -4,11 +4,10 @@ import {
   Users,
   Shield,
   MapPin,
-  HeartHand,
+  HeartHandshake,
   Globe,
   TrendingUp,
   Target,
-  BarChart,
   Lightbulb,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -43,7 +42,7 @@ const challenges = [
 
 const tripleBottomLine = [
   {
-    icon: <HeartHand className="h-8 w-8 text-primary" />,
+    icon: <HeartHandshake className="h-8 w-8 text-primary" />,
     title: 'People (Well-being)',
     text: 'Enhance student well-being, safety, and equitable access, especially for women and students with disabilities.',
   },
