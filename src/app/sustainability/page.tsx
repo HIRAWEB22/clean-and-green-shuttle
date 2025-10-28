@@ -1,3 +1,5 @@
+
+"use client";
 import { Leaf, Wind, ShieldCheck, Mountain } from "lucide-react";
 import Image from "next/image";
 import {
