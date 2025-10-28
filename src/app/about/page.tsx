@@ -8,6 +8,8 @@ import {
   Shield,
   Coins,
   CheckCircle,
+  BarChart2,
+  Users,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import imageData from '@/lib/placeholder-images.json';
@@ -20,53 +22,76 @@ const images: Record<string, ImagePlaceholder> =
   }, {} as Record<string, ImagePlaceholder>);
 
 const bannerImage = images['sustainability-banner'];
+const akuhImage = images['akuh-shuttle'];
 
 const challenges = [
   {
-    icon: <Coins className="h-8 w-8 text-primary" />,
-    title: 'Affordability',
+    icon: <Coins className="h-10 w-10 text-destructive" />,
+    title: 'Socio-Economic Burden',
     description:
-      'High travel costs create a financial burden on students, limiting their campus activities and participation.',
+      'High travel costs create a financial burden on students, limiting their campus activities and participation in university life.',
   },
   {
-    icon: <Shield className="h-8 w-8 text-primary" />,
-    title: 'Safety & Health',
+    icon: <Shield className="h-10 w-10 text-primary" />,
+    title: 'Safety & Public Health',
     description:
-      'Reliance on external public transport poses health risks and safety concerns, especially for female students.',
+      'Reliance on external public transport poses health risks and safety concerns, especially with poor sanitation and overcrowding.',
   },
   {
-    icon: <Accessibility className="h-8 w-8 text-primary" />,
-    title: 'Accessibility',
+    icon: <Accessibility className="h-10 w-10 text-accent" />,
+    title: 'The Last-Mile Gap',
     description:
-      'The "last-mile" gap between public transport and campus facilities hinders access for many students, including those with disabilities.',
+      'The distance between public transit stations and central campus facilities hinders timely and equitable access for many students.',
   },
 ];
 
 const solutions = [
   {
-    icon: <Heart className="h-8 w-8 text-primary" />,
-    title: 'People',
+    icon: <Users className="h-8 w-8 text-primary" />,
+    title: 'People (Well-being)',
     description:
-      'Enhancing student well-being, safety, and equitable access for all, including those with disabilities.',
+      'Enhancing student well-being, safety, and providing equitable access for all, including those with disabilities.',
   },
   {
     icon: <Globe className="h-8 w-8 text-primary" />,
-    title: 'Planet',
+    title: 'Planet (Sustainability)',
     description:
       'Reducing our carbon footprint and contributing to a sustainable campus environment for future generations.',
   },
   {
     icon: <DollarSign className="h-8 w-8 text-primary" />,
-    title: 'Profit',
+    title: 'Profit (Financial Stability)',
     description:
       'Creating a financially stable, efficient, and scalable service that reduces long-term operational costs.',
   },
 ];
 
+const precedents = [
+    {
+        icon: <BarChart2 className="h-8 w-8 text-primary" />,
+        title: 'Global Market Growth',
+        description: 'The electric golf cart industry is projected to grow at a CAGR of 8.03% from 2025 to 2034, with the fastest growth in the Asia-Pacific region.',
+    },
+    {
+        icon: <CheckCircle className="h-8 w-8 text-green-500" />,
+        title: 'Proven Pakistani Model',
+        description: 'The Aga Khan University Hospital in Karachi successfully implemented a solar-cum-electric shuttle service in 2013, saving 7.1 tons of CO2 annually.',
+    }
+]
+
+const sdgs = [
+    { id: 3, title: "Good Health and Well-being" },
+    { id: 7, title: "Affordable and Clean Energy" },
+    { id: 9, title: "Industry, Innovation, and Infrastructure" },
+    { id: 11, title: "Sustainable Cities and Communities" },
+    { id: 13, title: "Climate Action" },
+]
+
+
 export default function AboutPage() {
   return (
     <>
-      <section className="relative h-[50vh] w-full flex items-center justify-center text-center text-white">
+      <section className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
         {bannerImage && (
           <Image
             src={bannerImage.imageUrl}
@@ -77,79 +102,119 @@ export default function AboutPage() {
           />
         )}
         <div className="absolute inset-0 bg-green-900/60" />
-        <div className="relative z-10 px-4">
-          <h1 className="text-3xl md:text-4xl font-bold">
-            About The Clean & Green Initiative
-          </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto">
-            A strategic effort to build a safer, more sustainable, and
-            inclusive campus for everyone.
-          </p>
+        <div className="relative z-10 px-4 max-w-4xl mx-auto">
+            <p className="text-sm uppercase tracking-widest text-primary-foreground/80">
+                Campus Transportation: Sustainability and Efficiency
+            </p>
+            <h1 className="text-3xl md:text-5xl font-bold mt-2">
+                Strategic Analysis of the Clean & Green Shuttle Service
+            </h1>
         </div>
       </section>
       
       <section className="py-16 md:py-24 bg-background">
-        <div className="container text-center max-w-4xl">
-            <h2 className="text-3xl font-bold tracking-tight">The Challenge</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-                Our campus community faces key transportation issues that impact student life.
+        <div className="container text-center max-w-5xl">
+            <h2 className="text-3xl font-bold tracking-tight">Addressing Systemic Deficiencies in Campus Mobility</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                Our campus community faces key transportation issues that impact operational efficiency and compromise student well-being.
             </p>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 {challenges.map(item => (
-                    <div key={item.title} className="flex items-start gap-4">
-                        <div className="bg-primary/10 p-3 rounded-full mt-1">
-                            {item.icon}
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg">{item.title}</h3>
+                    <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <CardHeader className="items-center">
+                            <div className="p-4 bg-secondary rounded-full">
+                                {item.icon}
+                            </div>
+                            <CardTitle className="mt-4 text-xl">{item.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
                             <p className="text-muted-foreground">{item.description}</p>
-                        </div>
-                    </div>
+                        </CardContent>
+                    </Card>
                 ))}
             </div>
         </div>
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
-        <div className="container text-center max-w-4xl">
-            <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-                Our electric fleet delivers social, environmental, and financial benefits.
-            </p>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-                {solutions.map(item => (
-                    <div key={item.title} className="flex items-start gap-4">
-                        <div className="bg-primary/10 p-3 rounded-full mt-1">
-                            {item.icon}
-                        </div>
-                        <div>
-                            <h3 className="font-bold text-lg">{item.title}</h3>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </div>
+        <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="max-w-xl">
+                    <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line Framework</h2>
+                    <p className="mt-4 text-lg text-muted-foreground">
+                        Our electric fleet delivers social, environmental, and financial benefits, measured by the Triple Bottom Line (TBL) framework. This positions the project as a strategic asset that reduces long-term costs.
+                    </p>
+                    <div className="mt-8 space-y-6">
+                        {solutions.map(item => (
+                            <div key={item.title} className="flex items-start gap-4">
+                                <div className="bg-primary/10 p-3 rounded-full mt-1">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-lg">{item.title}</h3>
+                                    <p className="text-muted-foreground">{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
+                </div>
+                <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl">
+                     {bannerImage && (
+                        <Image
+                            src={images['hero-shuttle'].imageUrl}
+                            alt={images['hero-shuttle'].description}
+                            data-ai-hint={images['hero-shuttle'].imageHint}
+                            fill
+                            className="object-cover"
+                        />
+                    )}
+                </div>
+            </div>
+        </div>
+      </section>
+
+       <section className="py-16 md:py-24 bg-background">
+        <div className="container">
+            <div className="text-center mb-12">
+                 <h2 className="text-3xl font-bold tracking-tight">Validation and Precedent</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                    The shift to Low-Speed Electric Vehicles is supported by global market trends and successful local implementations.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                {precedents.map(item => (
+                     <Card key={item.title} className="shadow-lg">
+                        <CardHeader>
+                             <div className="flex items-center gap-4">
+                                {item.icon}
+                                <CardTitle>{item.title}</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </CardContent>
+                    </Card>
                 ))}
             </div>
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="bg-card p-10 rounded-xl shadow-lg border">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-center md:text-left">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  To provide safe, reliable, and sustainable transportation that enhances campus accessibility and student well-being.
-                </p>
-              </div>
-               <div className="border-t md:border-l md:border-t-0 md:pl-8 pt-8 md:pt-0">
-                 <h2 className="text-3xl font-bold tracking-tight">Our Vision</h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  To be a leader in campus mobility by creating an innovative, eco-friendly transit system that serves as a model for universities worldwide.
-                </p>
-              </div>
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container text-center">
+            <h2 className="text-3xl font-bold">Alignment with UN Sustainable Development Goals</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                Our initiative actively contributes to the United Nations Sustainable Development Goals (SDGs), making a global impact from our campus.
+            </p>
+            <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
+                {sdgs.map(goal => (
+                    <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
+                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform">
+                            <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
+                        </a>
+                        <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
+                    </div>
+                ))}
             </div>
-          </div>
         </div>
       </section>
     </>
