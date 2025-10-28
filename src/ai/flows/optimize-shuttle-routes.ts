@@ -4,47 +4,15 @@
  * @fileOverview An AI-powered tool to automatically optimize shuttle routes based on real-time passenger demand and traffic conditions.
  *
  * - optimizeShuttleRoutes - A function that optimizes shuttle routes.
- * - OptimizeShuttleRoutesInput - The input type for the optimizeShuttleRoutes function.
- * - OptimizeShuttleRoutesOutput - The return type for the optimizeShuttleRoutes function.
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-const OptimizeShuttleRoutesInputSchema = z.object({
-  passengerDemand: z
-    .string()
-    .describe(
-      'A JSON string containing real-time passenger demand data for each shuttle stop.'
-    ),
-  trafficConditions: z
-    .string()
-    .describe(
-      'A JSON string containing real-time traffic conditions data for the shuttle routes.'
-    ),
-  currentRoutes: z
-    .string()
-    .describe(
-      'A JSON string containing the current shuttle routes and schedules.'
-    ),
-});
-export type OptimizeShuttleRoutesInput = z.infer<
-  typeof OptimizeShuttleRoutesInputSchema
->;
-
-const OptimizeShuttleRoutesOutputSchema = z.object({
-  optimizedRoutes: z
-    .string()
-    .describe(
-      'A JSON string containing the optimized shuttle routes and schedules.'
-    ),
-  reasoning: z
-    .string()
-    .describe('The AI’s reasoning for the route optimizations.'),
-});
-export type OptimizeShuttleRoutesOutput = z.infer<
-  typeof OptimizeShuttleRoutesOutputSchema
->;
+import {
+  OptimizeShuttleRoutesInputSchema,
+  type OptimizeShuttleRoutesInput,
+  OptimizeShuttleRoutesOutputSchema,
+  type OptimizeShuttleRoutesOutput,
+} from '@/ai/schemas';
 
 export async function optimizeShuttleRoutes(
   input: OptimizeShuttleRoutesInput
