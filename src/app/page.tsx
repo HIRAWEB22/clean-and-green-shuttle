@@ -1,3 +1,162 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Shield, Leaf, CircleDollarSign, MoveRight } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AnimatedCounter } from "@/components/animated-counter";
+
+const heroImage = PlaceHolderImages.find((img) => img.id === "hero-shuttle");
+const testimonialImages = {
+    '1': PlaceHolderImages.find((img) => img.id === "testimonial-1"),
+    '2': PlaceHolderImages.find((img) => img.id === "testimonial-2"),
+    '3': PlaceHolderImages.find((img) => img.id === "testimonial-3"),
+};
+
+const features = [
+  {
+    icon: <Shield className="h-10 w-10 text-primary" />,
+    title: "Safe & Secure",
+    description: "Travel with peace of mind with our focus on safety and real-time monitoring.",
+  },
+  {
+    icon: <Leaf className="h-10 w-10 text-primary" />,
+    title: "Eco-Friendly",
+    description: "Reduce your carbon footprint. Our electric shuttles are a step towards a greener campus.",
+  },
+  {
+    icon: <CircleDollarSign className="h-10 w-10 text-primary" />,
+    title: "Affordable",
+    description: "Cost-effective travel options for every student, making campus commute easier on your wallet.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Priya Sharma",
+    role: "Computer Science Student",
+    quote: "The shuttle service is a lifesaver! I can track it in real-time and never have to worry about being late for class.",
+    avatar: testimonialImages['1']?.imageUrl,
+    avatarHint: testimonialImages['1']?.imageHint
+  },
+  {
+    name: "Rahul Verma",
+    role: "Business Administration Student",
+    quote: "It's so convenient and affordable. Plus, it feels good to know I'm contributing to a greener campus. The app is super easy to use!",
+    avatar: testimonialImages['2']?.imageUrl,
+    avatarHint: testimonialImages['2']?.imageHint
+  },
+  {
+    name: "Anjali Mehta",
+    role: "Arts & Humanities Student",
+    quote: "I feel much safer commuting within the campus, especially during the evenings. The tracking feature gives me and my parents peace of mind.",
+    avatar: testimonialImages['3']?.imageUrl,
+    avatarHint: testimonialImages['3']?.imageHint
+  },
+];
+
+
 export default function Home() {
-  return <></>;
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
+        {heroImage && (
+          <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            data-ai-hint={heroImage.imageHint}
+            fill
+            className="object-cover"
+            priority
+          />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 flex flex-col items-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-shadow-lg">
+            Ride Green. Ride Smart.
+          </h1>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-200 mb-8">
+            The future of campus mobility is here. Clean, efficient, and always on time.
+          </p>
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
+            <Link href="/track">
+              Track a Shuttle Now <MoveRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-16 md:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Why Use Campus Cruiser?</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              We provide the best campus transportation experience with a focus on sustainability, safety, and accessibility.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div key={feature.title} className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-md transition-transform hover:scale-105">
+                {feature.icon}
+                <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
+                <p className="mt-2 text-muted-foreground">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* CO2 Saved Counter Section */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-foreground">Our Collective Impact</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Every ride contributes to a cleaner, greener campus for everyone.
+          </p>
+          <div className="mt-8 bg-card p-8 rounded-lg shadow-xl inline-block">
+            <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground">CO₂ Saved (in kg)</p>
+            <div className="text-6xl md:text-7xl font-bold text-primary mt-2">
+              <AnimatedCounter targetValue={12543} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 md:py-24 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">What Our Students Say</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real stories from students who love Campus Cruiser.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.name} className="flex flex-col justify-between">
+                <CardContent className="pt-6">
+                  <p className="text-muted-foreground">"{testimonial.quote}"</p>
+                </CardContent>
+                <CardHeader>
+                  <div className="flex items-center">
+                    {testimonial.avatar && <Avatar className="h-12 w-12">
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
+                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                    </Avatar>}
+                    <div className="ml-4">
+                      <CardTitle className="text-base">{testimonial.name}</CardTitle>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
