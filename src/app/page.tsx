@@ -1,7 +1,7 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { MoveRight, Zap, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { MoveRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -12,26 +12,23 @@ import {
 } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AnimatedCounter } from '@/components/animated-counter';
+import imageData from '@/lib/placeholder-images.json';
+import type { ImagePlaceholder } from '@/lib/placeholder-images';
 
-const heroImage = PlaceHolderImages.find(img => img.id === 'hero-shuttle');
-const testimonialImages = {
-  '1': PlaceHolderImages.find(img => img.id === 'testimonial-1'),
-  '2': PlaceHolderImages.find(img => img.id === 'testimonial-2'),
-  '3': PlaceHolderImages.find(img => img.id === 'testimonial-3'),
-};
-const fleetImages = {
-  main: PlaceHolderImages.find(img => img.id === 'shuttle-main-campus'),
-  accessibility: PlaceHolderImages.find(
-    img => img.id === 'shuttle-accessibility'
-  ),
-};
+const images: Record<string, ImagePlaceholder> =
+  imageData.placeholderImages.reduce((acc, img) => {
+    acc[img.id] = img;
+    return acc;
+  }, {} as Record<string, ImagePlaceholder>);
+
+const heroImage = images['hero-shuttle'];
 
 const fleet = [
   {
     name: 'Main Campus Loop',
     description:
       'Our primary shuttle connecting all major academic buildings, libraries, and student centers.',
-    image: fleetImages['main'],
+    image: images['shuttle-main-campus'],
     features: [
       'High-frequency service',
       'Connects all major buildings',
@@ -42,7 +39,7 @@ const fleet = [
     name: 'Accessibility Shuttle',
     description:
       'A dedicated service with wheelchair access and priority seating for students with mobility needs.',
-    image: fleetImages['accessibility'],
+    image: images['shuttle-accessibility'],
     features: [
       'Wheelchair accessible',
       'On-demand booking available',
@@ -57,24 +54,21 @@ const testimonials = [
     role: 'Computer Science Student',
     quote:
       'The shuttle service is a lifesaver! I can track it in real-time and never have to worry about being late for class.',
-    avatar: testimonialImages['1']?.imageUrl,
-    avatarHint: testimonialImages['1']?.imageHint,
+    avatar: images['testimonial-1'],
   },
   {
     name: 'Rahul Verma',
     role: 'Business Administration Student',
     quote:
       "It's so convenient and affordable. Plus, it feels good to know I'm contributing to a greener campus. The app is super easy to use!",
-    avatar: testimonialImages['2']?.imageUrl,
-    avatarHint: testimonialImages['2']?.imageHint,
+    avatar: images['testimonial-2'],
   },
   {
     name: 'Anjali Mehta',
     role: 'Arts & Humanities Student',
     quote:
       'I feel much safer commuting within the campus, especially during the evenings. The tracking feature gives me and my parents peace of mind.',
-    avatar: testimonialImages['3']?.imageUrl,
-    avatarHint: testimonialImages['3']?.imageHint,
+    avatar: images['testimonial-3'],
   },
 ];
 
@@ -211,9 +205,9 @@ export default function Home() {
                     {testimonial.avatar && (
                       <Avatar className="h-12 w-12">
                         <AvatarImage
-                          src={testimonial.avatar}
+                          src={testimonial.avatar.imageUrl}
                           alt={testimonial.name}
-                          data-ai-hint={testimonial.avatarHint}
+                          data-ai-hint={testimonial.avatar.imageHint}
                         />
                         <AvatarFallback>
                           {testimonial.name.charAt(0)}

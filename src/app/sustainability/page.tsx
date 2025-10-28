@@ -1,6 +1,6 @@
 
 "use client";
-import { Leaf, Wind, ShieldCheck, Mountain } from "lucide-react";
+import { Leaf, Wind, Mountain } from "lucide-react";
 import Image from "next/image";
 import {
   Bar,
@@ -14,12 +14,17 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 import { AnimatedCounter } from "@/components/animated-counter";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Badge } from "@/components/ui/badge";
+import imageData from '@/lib/placeholder-images.json';
+import type { ImagePlaceholder } from "@/lib/placeholder-images";
 
-const bannerImage = PlaceHolderImages.find(
-  (img) => img.id === "sustainability-banner"
-);
+const images: Record<string, ImagePlaceholder> =
+  imageData.placeholderImages.reduce((acc, img) => {
+    acc[img.id] = img;
+    return acc;
+  }, {} as Record<string, ImagePlaceholder>);
+
+
+const bannerImage = images["sustainability-banner"];
 
 const stats = [
   {

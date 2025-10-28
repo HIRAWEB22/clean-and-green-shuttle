@@ -1,17 +1,25 @@
+
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Bus, MapPin, LocateFixed, Clock } from "lucide-react";
 
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import imageData from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import type { ImagePlaceholder } from "@/lib/placeholder-images";
 
-const mapImage = PlaceHolderImages.find((img) => img.id === "campus-map");
+const images: Record<string, ImagePlaceholder> =
+  imageData.placeholderImages.reduce((acc, img) => {
+    acc[img.id] = img;
+    return acc;
+  }, {} as Record<string, ImagePlaceholder>);
+
+const mapImage = images["campus-map"];
 
 const stops = [
   { id: 1, name: "Central Library", position: { x: 15, y: 20 } },
