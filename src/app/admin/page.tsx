@@ -1,4 +1,7 @@
+
 import { AiOptimizerForm } from "@/components/ai-optimizer-form";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ListChecks, Lightbulb, Bot } from "lucide-react";
 
 export default function AdminPage() {
   return (
@@ -12,6 +15,46 @@ export default function AdminPage() {
           demand and traffic conditions.
         </p>
       </div>
+
+      <Card className="mb-12 shadow-lg bg-secondary">
+        <CardHeader>
+          <CardTitle className="text-2xl text-secondary-foreground">How It Works</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-8 text-secondary-foreground">
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-primary/20 text-primary p-4 rounded-full mb-4">
+                <ListChecks className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">1. Provide Data</h3>
+              <p className="text-sm">
+                Use the default JSON data or input your own real-time
+                information for passenger demand, traffic, and current routes.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-primary/20 text-primary p-4 rounded-full mb-4">
+                <Bot className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">2. Run Optimization</h3>
+              <p className="text-sm">
+                Click the "Optimize Routes" button. Our AI will analyze the
+                data to find the most efficient routing solutions.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="bg-primary/20 text-primary p-4 rounded-full mb-4">
+                <Lightbulb className="h-8 w-8" />
+              </div>
+              <h3 className="font-bold text-lg mb-2">3. Get Results</h3>
+              <p className="text-sm">
+                The AI will provide a new, optimized route schedule and explain
+                the reasoning behind its decisions.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       <AiOptimizerForm />
     </div>
