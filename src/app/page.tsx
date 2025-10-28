@@ -29,7 +29,7 @@ const fleet = [
     name: 'Main Campus Loop',
     description:
       'Our primary shuttle connecting all major academic buildings, libraries, and student centers.',
-    image: images['shuttle-main-campus'],
+    href: '/fleet/campus-loop',
     features: [
       'High-frequency service',
       'Connects all major buildings',
@@ -40,7 +40,7 @@ const fleet = [
     name: 'Islamabad City Connect',
     description:
       'Serving the local community by connecting key areas of Islamabad with our campus.',
-    image: images['shuttle-in-city'],
+    href: '/fleet/city-connect',
     features: [
       'Connects campus to BRT stations',
       'Affordable fares for all',
@@ -128,25 +128,14 @@ export default function Home() {
             {fleet.map(shuttle => (
               <Card
                 key={shuttle.name}
-                className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
-                {shuttle.image && (
-                  <div className="relative h-64 w-full overflow-hidden">
-                    <Image
-                      src={shuttle.image.imageUrl}
-                      alt={shuttle.image.description}
-                      data-ai-hint={shuttle.image.imageHint}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                )}
                 <CardHeader>
                   <CardTitle className="text-2xl">{shuttle.name}</CardTitle>
                   <CardDescription>{shuttle.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="flex-1 flex flex-col">
+                  <ul className="space-y-3 flex-1">
                     {shuttle.features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -155,7 +144,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <Button asChild className="mt-6 w-full">
-                    <Link href="/track">View Details</Link>
+                    <Link href={shuttle.href}>View Details</Link>
                   </Button>
                 </CardContent>
               </Card>
