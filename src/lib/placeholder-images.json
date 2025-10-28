@@ -13,6 +13,12 @@
       "imageHint": "campus map"
     },
     {
+      "id": "city-map",
+      "description": "A stylized, abstract map of a city with roads and districts.",
+      "imageUrl": "https://images.unsplash.com/photo-1604357209793-f5d62817342b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGNpdHklMjBtYXB8ZW58MHx8fHwxNzIyMzA0NzIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract city map"
+    },
+    {
       "id": "sustainability-banner",
       "description": "A graphic representing sustainability and green energy.",
       "imageUrl": "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxncmVlbiUyMGVuZXJneXxlbnwwfHx8fDE3NjE1NzkwNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
