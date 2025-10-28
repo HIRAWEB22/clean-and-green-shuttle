@@ -120,7 +120,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 {challenges.map(item => (
-                    <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow">
+                    <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                         <CardHeader className="items-center">
                             <div className="p-4 bg-secondary rounded-full">
                                 {item.icon}
@@ -158,14 +158,14 @@ export default function AboutPage() {
                         ))}
                     </div>
                 </div>
-                <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl">
-                     {bannerImage && (
+                <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
+                     {images['hero-shuttle'] && (
                         <Image
                             src={images['hero-shuttle'].imageUrl}
                             alt={images['hero-shuttle'].description}
                             data-ai-hint={images['hero-shuttle'].imageHint}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                     )}
                 </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 {precedents.map(item => (
-                     <Card key={item.title} className="shadow-lg">
+                     <Card key={item.title} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                         <CardHeader>
                              <div className="flex items-center gap-4">
                                 {item.icon}
@@ -208,7 +208,7 @@ export default function AboutPage() {
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
                     <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
-                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform">
+                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
                             <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
                         </a>
                         <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>

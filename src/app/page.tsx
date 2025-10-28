@@ -96,10 +96,10 @@ export default function Home() {
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold group"
           >
             <Link href="/track">
-              Track a Shuttle Now <MoveRight className="ml-2 h-5 w-5" />
+              Track a Shuttle Now <MoveRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -119,16 +119,16 @@ export default function Home() {
             {fleet.map(shuttle => (
               <Card
                 key={shuttle.name}
-                className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-2xl"
+                className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group max-w-2xl"
               >
                 {shuttle.image && (
-                  <div className="relative h-64 w-full">
+                  <div className="relative h-64 w-full overflow-hidden">
                     <Image
                       src={shuttle.image.imageUrl}
                       alt={shuttle.image.description}
                       data-ai-hint={shuttle.image.imageHint}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                 )}
@@ -192,7 +192,7 @@ export default function Home() {
             {testimonials.map(testimonial => (
               <Card
                 key={testimonial.name}
-                className="flex flex-col justify-between"
+                className="flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground">
