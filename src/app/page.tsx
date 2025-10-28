@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, Leaf, CircleDollarSign, MoveRight } from "lucide-react";
+import { MoveRight, Zap, Users, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AnimatedCounter } from "@/components/animated-counter";
 
@@ -13,23 +13,24 @@ const testimonialImages = {
     '2': PlaceHolderImages.find((img) => img.id === "testimonial-2"),
     '3': PlaceHolderImages.find((img) => img.id === "testimonial-3"),
 };
+const fleetImages = {
+  'main': PlaceHolderImages.find((img) => img.id === "shuttle-main-campus"),
+  'accessibility': PlaceHolderImages.find((img) => img.id === "shuttle-accessibility"),
+};
 
-const features = [
+const fleet = [
   {
-    icon: <Shield className="h-10 w-10 text-primary" />,
-    title: "Safe & Secure",
-    description: "Travel with peace of mind with our focus on safety and real-time monitoring.",
+    name: "Main Campus Loop",
+    description: "Our primary shuttle connecting all major academic buildings, libraries, and student centers.",
+    image: fleetImages['main'],
+    features: ["High-frequency service", "Connects all major buildings", "Runs every 10 minutes"],
   },
   {
-    icon: <Leaf className="h-10 w-10 text-primary" />,
-    title: "Eco-Friendly",
-    description: "Reduce your carbon footprint. Our electric shuttles are a step towards a greener campus.",
-  },
-  {
-    icon: <CircleDollarSign className="h-10 w-10 text-primary" />,
-    title: "Affordable",
-    description: "Cost-effective travel options for every student, making campus commute easier on your wallet.",
-  },
+    name: "Accessibility Shuttle",
+    description: "A dedicated service with wheelchair access and priority seating for students with mobility needs.",
+    image: fleetImages['accessibility'],
+    features: ["Wheelchair accessible", "On-demand booking available", "Trained assistive staff"],
+  }
 ];
 
 const testimonials = [
@@ -75,7 +76,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col items-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-shadow-lg">
-            Ride Green. Ride Smart.
+            Clean & Green Shuttle Service
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-200 mb-8">
             The future of campus mobility is here. Clean, efficient, and always on time.
@@ -88,22 +89,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-16 md:py-24 bg-background">
+      {/* Meet Our Fleet Section */}
+      <section id="fleet" className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Why Use Our Shuttle Service?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Meet Our Fleet</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              We provide the best campus transportation experience with a focus on sustainability, safety, and accessibility.
+              State-of-the-art electric shuttles for a modern campus experience.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-md transition-transform hover:scale-105">
-                {feature.icon}
-                <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
-                <p className="mt-2 text-muted-foreground">{feature.description}</p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {fleet.map((shuttle) => (
+              <Card key={shuttle.name} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                {shuttle.image && (
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src={shuttle.image.imageUrl}
+                      alt={shuttle.image.description}
+                      data-ai-hint={shuttle.image.imageHint}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="text-2xl">{shuttle.name}</CardTitle>
+                  <CardDescription>{shuttle.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3">
+                    {shuttle.features.map((feature, index) => (
+                      <li key={index} className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild className="mt-6 w-full">
+                    <Link href="/track">View Details</Link>
+                  </Button>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
