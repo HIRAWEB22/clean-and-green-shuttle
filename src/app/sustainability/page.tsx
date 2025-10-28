@@ -1,4 +1,4 @@
-import { Leaf, Co2, Wind, ShieldCheck } from "lucide-react";
+import { Leaf, Wind, ShieldCheck, Mountain } from "lucide-react";
 import Image from "next/image";
 import {
   Bar,
@@ -21,7 +21,7 @@ const bannerImage = PlaceHolderImages.find(
 
 const stats = [
   {
-    icon: <Co2 className="h-8 w-8 text-primary" />,
+    icon: <Mountain className="h-8 w-8 text-primary" />,
     value: 12543,
     label: "CO₂ Saved (kg)",
     description: "Equivalent to planting 200 trees.",
@@ -121,7 +121,7 @@ export default function SustainabilityPage() {
                 <div className="mt-8 space-y-4">
                     <div className="flex items-start gap-4">
                         <div className="bg-primary/20 text-primary p-3 rounded-full">
-                            <Co2 className="h-6 w-6"/>
+                            <Mountain className="h-6 w-6"/>
                         </div>
                         <div>
                             <h4 className="font-semibold">Zero Tailpipe Emissions</h4>
