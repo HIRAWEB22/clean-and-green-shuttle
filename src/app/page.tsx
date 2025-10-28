@@ -35,17 +35,6 @@ const fleet = [
       'Runs every 10 minutes',
     ],
   },
-  {
-    name: 'Accessibility Shuttle',
-    description:
-      'A dedicated service with wheelchair access and priority seating for students with mobility needs.',
-    image: images['shuttle-accessibility'],
-    features: [
-      'Wheelchair accessible',
-      'On-demand booking available',
-      'Trained assistive staff',
-    ],
-  },
 ];
 
 const testimonials = [

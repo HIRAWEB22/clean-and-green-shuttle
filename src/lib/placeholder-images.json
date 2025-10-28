@@ -41,12 +41,6 @@
       "description": "A multi-passenger electric golf cart shuttle on a university campus.",
       "imageUrl": "https://images.unsplash.com/photo-1593973703964-b586e68d56a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMGdvbGYlMjBjYXJ0JTIwc2h1dHRsZXxlbnwwfHx8fDE3MjA3MzM3MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "electric shuttle cart"
-    },
-    {
-      "id": "shuttle-accessibility",
-      "description": "An accessibility-focused electric shuttle.",
-      "imageUrl": "https://images.unsplash.com/photo-1631975498849-b051d2db3586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxlbGVjdHJpYyUyMGdvbGYlMjBjYXJ0JTIwc2h1dHRsZXxlbnwwfHx8fDE3MjA3MzM3MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "accessible shuttle cart"
     }
   ]
 }
