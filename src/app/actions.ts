@@ -21,21 +21,27 @@ export async function getOptimizedRoutes(
 
     if (!input.passengerDemand || !input.trafficConditions || !input.currentRoutes) {
         return {
-            message: "All fields are required. Please provide data in JSON format.",
+            message: "All fields are required. Please fill out the form completely.",
             data: null,
-            fieldErrors: {
-                passengerDemand: !input.passengerDemand ? "This field is required." : undefined,
-                trafficConditions: !input.trafficConditions ? "This field is required." : undefined,
-                currentRoutes: !input.currentRoutes ? "This field is required." : undefined,
-            }
+            fieldErrors: {}
         };
     }
 
     try {
         const result = await optimizeShuttleRoutes(input);
+        
+        let formattedRoutes = result.optimizedRoutes;
+        try {
+            // Try to parse and re-stringify for nice formatting
+            const parsedRoutes = JSON.parse(result.optimizedRoutes);
+            formattedRoutes = JSON.stringify(parsedRoutes, null, 2);
+        } catch (e) {
+            // Ignore if parsing fails, just use the raw string.
+        }
+
         return {
             message: "Routes optimized successfully.",
-            data: result,
+            data: { ...result, optimizedRoutes: formattedRoutes },
             fieldErrors: {}
         };
     } catch (error) {
@@ -48,3 +54,5 @@ export async function getOptimizedRoutes(
         };
     }
 }
+
+    

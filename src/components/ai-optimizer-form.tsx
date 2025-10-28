@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import { Bot, GitBranch, TrafficCone, Users } from "lucide-react";
+import { Bot, GitBranch, TrafficCone, Users, Plus, X } from "lucide-react";
 
 import { getOptimizedRoutes } from "@/app/actions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const initialState = {
   message: "",
@@ -17,40 +19,27 @@ const initialState = {
   fieldErrors: {},
 };
 
-const defaultPassengerDemand = JSON.stringify(
-  [
-    { stop: "Central Library", demand: 85 },
-    { stop: "Engineering Block", demand: 120 },
-    { stop: "Student Union", demand: 95 },
-  ],
-  null,
-  2
-);
+// Default data
+const defaultPassengerDemand = [
+    { id: 1, stop: "Central Library", demand: 85 },
+    { id: 2, stop: "Engineering Block", demand: 120 },
+    { id: 3, stop: "Student Union", demand: 95 },
+];
 
-const defaultTrafficConditions = JSON.stringify(
-  [
-    { route: "Library to Engineering", congestion: "high" },
-    { route: "Engineering to Union", congestion: "low" },
-  ],
-  null,
-  2
-);
+const defaultTrafficConditions = [
+    { id: 1, route: "Library to Engineering", congestion: "high" },
+    { id: 2, route: "Engineering to Union", congestion: "low" },
+];
 
-const defaultCurrentRoutes = JSON.stringify(
-  {
-    shuttle_1: {
-      route: ["Central Library", "Engineering Block", "Student Union"],
-      frequency_minutes: 15,
-    },
-  },
-  null,
-  2
-);
+const defaultCurrentRoutes = [
+    { id: 1, shuttleName: "Shuttle 1", route: "Central Library, Engineering Block, Student Union", frequency: 15 }
+];
+
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full">
+    <Button type="submit" disabled={pending} className="w-full mt-6">
       {pending ? "Optimizing..." : "Optimize Routes"}
       {!pending && <Bot className="ml-2 h-4 w-4" />}
     </Button>
@@ -60,8 +49,69 @@ function SubmitButton() {
 export function AiOptimizerForm() {
   const [state, formAction] = useActionState(getOptimizedRoutes, initialState);
 
+  const [passengerDemand, setPassengerDemand] = useState(defaultPassengerDemand);
+  const [trafficConditions, setTrafficConditions] = useState(defaultTrafficConditions);
+  const [currentRoutes, setCurrentRoutes] = useState(defaultCurrentRoutes);
+
+  const handleFormAction = (formData: FormData) => {
+    // Create JSON strings from state and add them to formData
+    const passengerDemandJSON = JSON.stringify(
+      passengerDemand.map(({ id, ...rest }) => rest)
+    );
+    const trafficConditionsJSON = JSON.stringify(
+      trafficConditions.map(({ id, ...rest }) => rest)
+    );
+    const routesData = currentRoutes.reduce((acc, shuttle) => {
+        acc[shuttle.shuttleName.toLowerCase().replace(" ", "_")] = {
+            route: shuttle.route.split(',').map(s => s.trim()),
+            frequency_minutes: shuttle.frequency
+        };
+        return acc;
+    }, {} as Record<string, any>);
+    const currentRoutesJSON = JSON.stringify(routesData, null, 2);
+
+    formData.set("passengerDemand", passengerDemandJSON);
+    formData.set("trafficConditions", trafficConditionsJSON);
+    formData.set("currentRoutes", currentRoutesJSON);
+    
+    formAction(formData);
+  };
+  
+  // Handlers for Passenger Demand
+  const handleDemandChange = (id: number, field: 'stop' | 'demand', value: string | number) => {
+    setPassengerDemand(passengerDemand.map(item => item.id === id ? {...item, [field]: value} : item));
+  };
+  const addDemandRow = () => {
+    setPassengerDemand([...passengerDemand, {id: Date.now(), stop: "", demand: 0}]);
+  };
+  const removeDemandRow = (id: number) => {
+    setPassengerDemand(passengerDemand.filter(item => item.id !== id));
+  };
+
+  // Handlers for Traffic Conditions
+  const handleTrafficChange = (id: number, field: 'route' | 'congestion', value: string) => {
+    setTrafficConditions(trafficConditions.map(item => item.id === id ? {...item, [field]: value} : item));
+  };
+  const addTrafficRow = () => {
+    setTrafficConditions([...trafficConditions, {id: Date.now(), route: "", congestion: "low"}]);
+  };
+  const removeTrafficRow = (id: number) => {
+    setTrafficConditions(trafficConditions.filter(item => item.id !== id));
+  };
+
+  // Handlers for Current Routes
+  const handleRouteChange = (id: number, field: 'shuttleName' | 'route' | 'frequency', value: string | number) => {
+    setCurrentRoutes(currentRoutes.map(item => item.id === id ? {...item, [field]: value} : item));
+  };
+  const addRouteRow = () => {
+    setCurrentRoutes([...currentRoutes, {id: Date.now(), shuttleName: "", route: "", frequency: 15}]);
+  };
+  const removeRouteRow = (id: number) => {
+    setCurrentRoutes(currentRoutes.filter(item => item.id !== id));
+  };
+
   return (
-    <form action={formAction} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <form action={handleFormAction} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Input Section */}
       <div className="space-y-6">
         <Card className="shadow-lg">
@@ -70,18 +120,18 @@ export function AiOptimizerForm() {
               <Users className="text-primary" /> Passenger Demand
             </CardTitle>
             <CardDescription>
-              Real-time passenger data for each stop (JSON format).
+              Add stops and set the number of waiting passengers.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Label htmlFor="passengerDemand" className="sr-only">Passenger Demand</Label>
-            <Textarea
-              id="passengerDemand"
-              name="passengerDemand"
-              rows={8}
-              defaultValue={defaultPassengerDemand}
-            />
-            {state.fieldErrors?.passengerDemand && <p className="text-sm font-medium text-destructive mt-2">{state.fieldErrors.passengerDemand}</p>}
+          <CardContent className="space-y-3">
+             {passengerDemand.map((item, index) => (
+                <div key={item.id} className="flex items-center gap-2">
+                    <Input placeholder="Stop Name" value={item.stop} onChange={(e) => handleDemandChange(item.id, 'stop', e.target.value)} />
+                    <Input type="number" placeholder="Demand" value={item.demand} onChange={(e) => handleDemandChange(item.id, 'demand', parseInt(e.target.value) || 0)} className="w-28" />
+                    <Button variant="ghost" size="icon" onClick={() => removeDemandRow(item.id)}><X className="h-4 w-4" /></Button>
+                </div>
+             ))}
+             <Button variant="outline" size="sm" onClick={addDemandRow}><Plus className="mr-2 h-4 w-4" /> Add Stop</Button>
           </CardContent>
         </Card>
 
@@ -91,18 +141,27 @@ export function AiOptimizerForm() {
               <TrafficCone className="text-primary" /> Traffic Conditions
             </CardTitle>
             <CardDescription>
-              Real-time traffic conditions on routes (JSON format).
+              Define routes and set their current traffic congestion.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Label htmlFor="trafficConditions" className="sr-only">Traffic Conditions</Label>
-            <Textarea
-              id="trafficConditions"
-              name="trafficConditions"
-              rows={8}
-              defaultValue={defaultTrafficConditions}
-            />
-             {state.fieldErrors?.trafficConditions && <p className="text-sm font-medium text-destructive mt-2">{state.fieldErrors.trafficConditions}</p>}
+          <CardContent className="space-y-3">
+            {trafficConditions.map(item => (
+                <div key={item.id} className="flex items-center gap-2">
+                    <Input placeholder="Route (e.g., Stop A to Stop B)" value={item.route} onChange={(e) => handleTrafficChange(item.id, 'route', e.target.value)} />
+                    <Select value={item.congestion} onValueChange={(value) => handleTrafficChange(item.id, 'congestion', value)}>
+                        <SelectTrigger className="w-40">
+                            <SelectValue placeholder="Congestion" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="low">Low</SelectItem>
+                            <SelectItem value="medium">Medium</SelectItem>
+                            <SelectItem value="high">High</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    <Button variant="ghost" size="icon" onClick={() => removeTrafficRow(item.id)}><X className="h-4 w-4" /></Button>
+                </div>
+            ))}
+            <Button variant="outline" size="sm" onClick={addTrafficRow}><Plus className="mr-2 h-4 w-4" /> Add Route</Button>
           </CardContent>
         </Card>
 
@@ -112,18 +171,21 @@ export function AiOptimizerForm() {
               <GitBranch className="text-primary" /> Current Routes
             </CardTitle>
             <CardDescription>
-              Current shuttle routes and schedules (JSON format).
+              Define current shuttle routes and their frequency.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <Label htmlFor="currentRoutes" className="sr-only">Current Routes</Label>
-            <Textarea
-              id="currentRoutes"
-              name="currentRoutes"
-              rows={8}
-              defaultValue={defaultCurrentRoutes}
-            />
-             {state.fieldErrors?.currentRoutes && <p className="text-sm font-medium text-destructive mt-2">{state.fieldErrors.currentRoutes}</p>}
+          <CardContent className="space-y-3">
+            {currentRoutes.map(item => (
+                 <div key={item.id} className="p-3 border rounded-lg space-y-2">
+                     <div className="flex items-center gap-2">
+                        <Input placeholder="Shuttle Name (e.g., Shuttle 1)" value={item.shuttleName} onChange={(e) => handleRouteChange(item.id, 'shuttleName', e.target.value)} />
+                        <Input type="number" placeholder="Frequency (mins)" value={item.frequency} onChange={(e) => handleRouteChange(item.id, 'frequency', parseInt(e.target.value) || 0)} className="w-36" />
+                        <Button variant="ghost" size="icon" onClick={() => removeRouteRow(item.id)}><X className="h-4 w-4" /></Button>
+                     </div>
+                     <Input placeholder="Route stops, comma-separated" value={item.route} onChange={(e) => handleRouteChange(item.id, 'route', e.target.value)}/>
+                 </div>
+            ))}
+            <Button variant="outline" size="sm" onClick={addRouteRow}><Plus className="mr-2 h-4 w-4" /> Add Shuttle</Button>
           </CardContent>
         </Card>
 
@@ -168,7 +230,7 @@ export function AiOptimizerForm() {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center text-center p-8 border-2 border-dashed rounded-lg h-96">
+              <div className="flex flex-col items-center justify-center text-center p-8 border-2 border-dashed rounded-lg h-full min-h-96">
                 <Bot className="h-16 w-16 text-muted-foreground" />
                 <p className="mt-4 text-muted-foreground">
                   Results will appear here after optimization.
@@ -181,3 +243,5 @@ export function AiOptimizerForm() {
     </form>
   );
 }
+
+    
