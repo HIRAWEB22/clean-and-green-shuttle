@@ -64,8 +64,11 @@ export function Chatbot() {
         </Button>
       </div>
 
-      {isOpen && (
-        <div className="fixed bottom-24 right-4 z-50 w-full max-w-sm">
+      
+      <div className={cn(
+          "fixed bottom-24 right-4 z-50 w-full max-w-sm transition-transform duration-300 ease-in-out",
+          isOpen ? "translate-x-0" : "translate-x-[calc(100%+2rem)]"
+          )}>
           <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh]">
             <header className="p-4 border-b flex items-center gap-3">
               <Bot className="h-8 w-8 text-primary" />
@@ -127,9 +130,7 @@ export function Chatbot() {
             </footer>
           </div>
         </div>
-      )}
+      
     </>
   );
 }
-
-    

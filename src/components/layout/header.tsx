@@ -78,33 +78,33 @@ export function Header() {
           </div>
         </div>
 
-        <div className="flex flex-1 items-center justify-between md:hidden">
+        <div className="flex w-full items-center justify-between md:hidden">
           <Link href="/" className="flex items-center">
             <Logo />
           </Link>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[280px]">
-              <div className="p-4">
-                <Link href="/" className="mb-8 block">
-                  <Logo />
-                </Link>
-                <nav className="flex flex-col space-y-2">
-                  {navLinks.map((link) => (
-                    <NavLink key={link.href} {...link} className="text-base" />
-                  ))}
-                </nav>
-                <div className="mt-8">
-                  <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-[280px]">
+                <div className="p-4">
+                  <Link href="/" className="mb-8 block">
+                    <Logo />
+                  </Link>
+                  <nav className="flex flex-col space-y-2">
+                    {navLinks.map((link) => (
+                      <NavLink key={link.href} {...link} className="text-base" />
+                    ))}
+                  </nav>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
