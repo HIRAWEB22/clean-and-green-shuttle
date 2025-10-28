@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useFormStatus } from "react";
 import { Bot, GitBranch, TrafficCone, Users } from "lucide-react";
 
 import { getOptimizedRoutes } from "@/app/actions";
@@ -57,7 +57,7 @@ function SubmitButton() {
 }
 
 export function AiOptimizerForm() {
-  const [state, formAction] = useFormState(getOptimizedRoutes, initialState);
+  const [state, formAction] = useActionState(getOptimizedRoutes, initialState);
 
   return (
     <form action={formAction} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
