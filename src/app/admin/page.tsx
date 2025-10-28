@@ -28,8 +28,8 @@ export default function AdminPage() {
               </div>
               <h3 className="font-bold text-lg mb-2">1. Provide Data</h3>
               <p className="text-sm">
-                Use the default JSON data or input your own real-time
-                information for passenger demand, traffic, and current routes.
+                Use the interactive forms to input real-time information for
+                passenger demand, traffic, and current routes.
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
