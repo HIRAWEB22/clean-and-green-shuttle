@@ -21,6 +21,7 @@ const images: Record<string, ImagePlaceholder> =
   }, {} as Record<string, ImagePlaceholder>);
 
 const bannerImage = images['sustainability-banner'];
+const shuttleImage = images['shuttle-main-campus'];
 
 const challenges = [
   {
@@ -145,13 +146,15 @@ export default function AboutPage() {
          <section className="bg-secondary py-16 rounded-lg">
             <div className="container grid md:grid-cols-2 gap-10 items-center">
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
-                    <Image
-                        src={images['shuttle-main-campus'].imageUrl}
-                        alt="Clean and Green Shuttle"
-                        data-ai-hint={images['shuttle-main-campus'].imageHint}
-                        fill
-                        className="object-cover"
-                    />
+                    {shuttleImage && (
+                        <Image
+                            src={shuttleImage.imageUrl}
+                            alt={shuttleImage.description}
+                            data-ai-hint={shuttleImage.imageHint}
+                            fill
+                            className="object-cover"
+                        />
+                    )}
                 </div>
                 <div>
                     <h2 className="text-3xl font-bold text-secondary-foreground">Our Solution: Clean & Green</h2>
