@@ -107,11 +107,11 @@ export default function Home() {
               experience.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="flex justify-center">
             {fleet.map(shuttle => (
               <Card
                 key={shuttle.name}
-                className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 max-w-2xl"
               >
                 {shuttle.image && (
                   <div className="relative h-64 w-full">
