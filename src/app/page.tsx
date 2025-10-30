@@ -80,9 +80,9 @@ const impactSlides = [
 ].filter(Boolean);
 
 const heroSlides = [
-  images['impact-bus1'],
   images['impact-bus'],
-  images['impact-hero1'],
+  images['impact-bus1'],
+  images['impact-bus2'],
 ].filter(Boolean);
 
 

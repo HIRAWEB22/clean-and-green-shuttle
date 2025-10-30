@@ -73,16 +73,22 @@
       "imageHint": "solar shuttle"
     },
     {
+      "id": "impact-bus",
+      "description": "Side view of a clean energy shuttle on a city street.",
+      "imageUrl": "/images/bus.png",
+      "imageHint": "clean bus"
+    },
+    {
       "id": "impact-bus1",
       "description": "A modern electric shuttle bus with motion blur.",
       "imageUrl": "/images/bus1.png",
       "imageHint": "electric bus"
     },
     {
-      "id": "impact-bus",
-      "description": "Side view of a clean energy shuttle on a city street.",
-      "imageUrl": "/images/bus.png",
-      "imageHint": "clean bus"
+      "id": "impact-bus2",
+      "description": "A modern electric shuttle bus at a bus stop.",
+      "imageUrl": "/images/bus2.png",
+      "imageHint": "future bus"
     },
     {
       "id": "impact-hero1",
