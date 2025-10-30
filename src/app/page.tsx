@@ -154,7 +154,12 @@ export default function Home() {
 
       {/* CO2 Saved Counter Section */}
       <section className="relative py-20 md:py-28 text-white">
-        <ImpactCarousel slides={impactSlides} />
+        <Image
+          src="/images/image copy.png"
+          alt="Background showing a clean energy bus"
+          fill
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative container text-center z-10">
           <h2 className="text-3xl md:text-4xl font-bold">
