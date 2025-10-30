@@ -79,9 +79,9 @@ const precedents = [
 ]
 
 const sdgs = [
-    { id: 3, title: "Good Health and Well-being" },
-    { id: 7, title: "Affordable and Clean Energy" },
-    { id: 9, title: "Industry, Innovation, and Infrastructure" },
+    { id: 3, title: "Good Health and Well-being", imageUrl: "/images/heart.png" },
+    { id: 7, title: "Affordable and Clean Energy", imageUrl: "/images/sun.png" },
+    { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "/images/hexa.png" },
     { id: 11, title: "Sustainable Cities and Communities" },
     { id: 13, title: "Climate Action" },
 ]
@@ -207,7 +207,9 @@ export default function AboutPage() {
                 {sdgs.map(goal => (
                     <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
                          <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
-                            <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
+                            <Image 
+                                src={(goal as any).imageUrl || `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`}
+                                alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md object-contain"/>
                         </a>
                         <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
                     </div>
