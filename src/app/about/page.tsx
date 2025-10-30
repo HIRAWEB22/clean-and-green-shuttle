@@ -151,6 +151,7 @@ export default function AboutPage() {
                                 <div>
                                     <h3 className="font-bold text-lg">{item.title}</h3>
                                     <p className="text-muted-foreground">{item.description}</p>
+
                                 </div>
                             </div>
                         ))}
