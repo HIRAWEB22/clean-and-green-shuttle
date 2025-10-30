@@ -85,8 +85,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <Image
-          src="/images/bus1.png"
-          alt="Clean and Green Shuttle"
+          src="/images/GOLF1.WEBP"
+          alt="Clean and Green Shuttle on a golf course"
           fill
           className="object-cover"
           priority
