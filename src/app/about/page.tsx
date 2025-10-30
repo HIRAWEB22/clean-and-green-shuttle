@@ -82,7 +82,7 @@ const precedents = [
 const sdgs = [
     { id: 3, title: "Good Health and Well-being", imageUrl: "/images/heart.png" },
     { id: 7, title: "Affordable and Clean Energy", imageUrl: "/images/sun.jpg" },
-    { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "/images/hexa.jpg" },
+    { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-09.jpg" },
     { id: 11, title: "Sustainable Cities and Communities", imageUrl: "/images/sdg.jpg" },
     { id: 13, title: "Climate Action", imageUrl: "/images/climate.jpg" },
 ]
@@ -159,13 +159,13 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
-                    {solutionImage && <Image
-                        src={solutionImage.imageUrl}
-                        alt={solutionImage.description}
-                        data-ai-hint={solutionImage.imageHint}
+                    <Image
+                        src="/images/ppp.png"
+                        alt="Fleet of new electric shuttles"
+                        data-ai-hint="electric shuttle fleet"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />}
+                    />
                 </div>
             </div>
         </div>
