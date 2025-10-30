@@ -96,6 +96,8 @@ export default function AboutPage() {
           alt="Fleet of new electric shuttles"
           fill
           className="object-cover"
+          priority
+          quality={100}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 px-4 py-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg">
