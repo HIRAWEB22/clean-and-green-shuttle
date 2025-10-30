@@ -4,14 +4,14 @@ import { cn } from '@/lib/utils';
 const Logo = () => {
   return (
     <div className="flex items-center gap-2">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary shadow-md">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary p-1 shadow-md">
         <Image
           src="/logos/logo-1.png"
           alt="Clean and Green Shuttle Service Logo"
-          width={32}
-          height={32}
+          width={40}
+          height={40}
           priority
-          className="rounded-full object-contain"
+          className="object-contain"
         />
       </div>
       <span className="font-bold text-lg hidden sm:inline-block">Clean & Green</span>
