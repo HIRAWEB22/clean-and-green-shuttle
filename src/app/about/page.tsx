@@ -159,7 +159,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="/images/PPP.PNG"
+                        src="/images/ppp.png"
                         alt="Fleet of new electric shuttles"
                         data-ai-hint="electric shuttle fleet"
                         fill
