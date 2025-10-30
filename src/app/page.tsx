@@ -86,15 +86,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                data-ai-hint={heroImage.imageHint}
-                fill
-                className="object-cover"
-            />
+            <div className="absolute inset-0">
+                <Image
+                    src={heroImage.imageUrl}
+                    alt={heroImage.description}
+                    data-ai-hint={heroImage.imageHint}
+                    fill
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40" />
+            </div>
         )}
-        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex flex-col items-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
             Clean & Green Shuttle Service
