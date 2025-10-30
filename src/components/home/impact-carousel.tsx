@@ -32,7 +32,7 @@ export function ImpactCarousel({ slides }: ImpactCarouselProps) {
         {slides.map(
           (slide, index) =>
             slide && (
-              <CarouselItem key={index} className="h-full">
+              <CarouselItem key={index} className="h-full relative">
                 <Image
                   src={slide.imageUrl}
                   alt={slide.description}
