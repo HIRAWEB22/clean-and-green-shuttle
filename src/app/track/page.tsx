@@ -59,13 +59,13 @@ const routeData = {
         mapImage: campusMapImage,
         stops: campusStops,
         path: campusRoutePath,
-        arrivalStop: "Science Hub",
+        initialArrivalStop: "Science Hub",
     },
     city: {
         mapImage: cityMapImage,
         stops: cityStops,
         path: cityRoutePath,
-        arrivalStop: "Blue Area",
+        initialArrivalStop: "Blue Area",
     }
 }
 
@@ -81,16 +81,21 @@ export default function TrackPage() {
   const [highlightedStop, setHighlightedStop] = useState<number | null>(null);
   const [arrivalMinutes, setArrivalMinutes] = useState(5);
   const [arrivalSeconds, setArrivalSeconds] = useState(0);
+  const [arrivalStopName, setArrivalStopName] = useState(routeData[activeRoute].initialArrivalStop);
 
   const currentRoute = routeData[activeRoute];
 
   useEffect(() => {
-    // Reset animation when route changes
+    // Reset animation and states when route changes
     setCurrentSegment(0);
     setProgress(0);
     setShuttlePosition(currentRoute.path[0]);
     setHighlightedStop(null);
-  }, [activeRoute, currentRoute.path]);
+    setArrivalStopName(currentRoute.initialArrivalStop);
+    const newMinutes = activeRoute === 'campus' ? 5 : 12;
+    setArrivalMinutes(newMinutes);
+    setArrivalSeconds(0);
+  }, [activeRoute, currentRoute]);
 
   useEffect(() => {
     const animationFrame = requestAnimationFrame(animateShuttle);
@@ -104,15 +109,10 @@ export default function TrackPage() {
       } else if (arrivalMinutes > 0) {
         setArrivalMinutes(arrivalMinutes - 1);
         setArrivalSeconds(59);
-      } else {
-        // Reset timer
-        const newMinutes = activeRoute === 'campus' ? 5 : 12;
-        setArrivalMinutes(newMinutes);
-        setArrivalSeconds(0);
       }
     }, 1000);
     return () => clearInterval(timer);
-  }, [arrivalMinutes, arrivalSeconds, activeRoute]);
+  }, [arrivalMinutes, arrivalSeconds]);
   
   const animateShuttle = () => {
     setProgress((prev) => {
@@ -132,10 +132,21 @@ export default function TrackPage() {
     setShuttlePosition({ x: newX, y: newY });
   };
 
+  const handleStopClick = (stop: typeof currentRoute.stops[0]) => {
+    setHighlightedStop(stop.id);
+    setArrivalStopName(stop.name);
+    // Simulate new arrival time for the selected stop
+    setArrivalMinutes(Math.floor(Math.random() * 10) + 2);
+    setArrivalSeconds(Math.floor(Math.random() * 60));
+  };
+
   const findNearestStop = () => {
     // Mock finding nearest stop based on active route
     const nearestStopId = activeRoute === 'campus' ? 3 : 2; // Science Hub or Saddar Station
-    setHighlightedStop(nearestStopId);
+    const nearestStop = currentRoute.stops.find(s => s.id === nearestStopId);
+    if (nearestStop) {
+        handleStopClick(nearestStop);
+    }
   };
 
   return (
@@ -222,7 +233,7 @@ export default function TrackPage() {
                     </CardHeader>
                     <CardContent>
                     <div className="text-center bg-secondary p-4 rounded-lg">
-                        <p className="text-sm font-medium uppercase text-secondary-foreground">Estimated Arrival at '{currentRoute.arrivalStop}'</p>
+                        <p className="text-sm font-medium uppercase text-secondary-foreground truncate">Estimated Arrival at '{arrivalStopName}'</p>
                         <div className="text-4xl font-bold text-primary mt-1">
                         {String(arrivalMinutes).padStart(2, '0')}:{String(arrivalSeconds).padStart(2, '0')}
                         </div>
@@ -246,9 +257,15 @@ export default function TrackPage() {
                     <ul className="space-y-3">
                         {currentRoute.stops.map((stop, index) => (
                         <li key={stop.id}>
-                            <div className={cn("flex items-center gap-3 p-2 rounded-md transition-colors", highlightedStop === stop.id && "bg-accent")}>
-                            <Badge variant="secondary" className="text-lg">{stop.id}</Badge>
-                            <span className={cn("font-medium", highlightedStop === stop.id && "text-accent-foreground")}>{stop.name}</span>
+                            <div
+                             onClick={() => handleStopClick(stop)}
+                             className={cn(
+                                "flex items-center gap-3 p-2 rounded-md transition-colors cursor-pointer hover:bg-muted",
+                                highlightedStop === stop.id && "bg-accent hover:bg-accent/90"
+                              )}
+                            >
+                              <Badge variant={highlightedStop === stop.id ? "default" : "secondary"} className="text-lg">{stop.id}</Badge>
+                              <span className={cn("font-medium", highlightedStop === stop.id && "text-accent-foreground")}>{stop.name}</span>
                             </div>
                             {index < currentRoute.stops.length - 1 && <Separator className="my-2" />}
                         </li>
@@ -262,4 +279,3 @@ export default function TrackPage() {
     </div>
   );
 }
-
