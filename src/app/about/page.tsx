@@ -21,7 +21,6 @@ const images: Record<string, ImagePlaceholder> =
     return acc;
   }, {} as Record<string, ImagePlaceholder>);
 
-const bannerImage = images['shuttle-fleet-background'];
 const akuhImage = images['akuh-shuttle'];
 
 const challenges = [
@@ -92,17 +91,14 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
-        {bannerImage && (
-          <Image
-            src={bannerImage.imageUrl}
-            alt={bannerImage.description}
-            data-ai-hint={bannerImage.imageHint}
-            fill
-            className="object-cover z-0"
-          />
-        )}
-        <div className="absolute inset-0 bg-green-900/60 z-10" />
-        <div className="relative z-20 px-4 max-w-4xl mx-auto">
+        <Image
+          src="/images/image copy 4.png"
+          alt="Fleet of new electric shuttles"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-green-900/60" />
+        <div className="relative z-10 px-4 max-w-4xl mx-auto">
             <p className="text-sm uppercase tracking-widest text-primary-foreground/80">
                 Campus Transportation: Sustainability and Efficiency
             </p>
