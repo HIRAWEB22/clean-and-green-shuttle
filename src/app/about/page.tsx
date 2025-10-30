@@ -80,7 +80,7 @@ const precedents = [
 
 const sdgs = [
     { id: 3, title: "Good Health and Well-being", imageUrl: "/images/heart.png" },
-    { id: 7, title: "Affordable and Clean Energy", imageUrl: "/images/sun.png" },
+    { id: 7, title: "Affordable and Clean Energy", imageUrl: "/images/sun.jpg" },
     { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "/images/hexa.png" },
     { id: 11, title: "Sustainable Cities and Communities" },
     { id: 13, title: "Climate Action" },
