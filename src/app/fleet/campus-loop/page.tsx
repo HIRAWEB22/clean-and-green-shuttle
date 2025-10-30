@@ -2,16 +2,6 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Clock, MapPin } from 'lucide-react';
-import imageData from '@/lib/placeholder-images.json';
-import type { ImagePlaceholder } from '@/lib/placeholder-images';
-
-const images: Record<string, ImagePlaceholder> =
-  imageData.placeholderImages.reduce((acc, img) => {
-    acc[img.id] = img;
-    return acc;
-  }, {} as Record<string, ImagePlaceholder>);
-
-const shuttleImage = images['shuttle-main-campus'];
 
 const features = [
   { text: 'Connects all major academic buildings, libraries, and student centers.' },
@@ -37,15 +27,13 @@ export default function CampusLoopPage() {
 
         <Card className="mt-8 shadow-lg overflow-hidden">
           <div className="relative h-64 md:h-96 w-full">
-            {shuttleImage && (
-              <Image
-                src={shuttleImage.imageUrl}
-                alt={shuttleImage.description}
-                data-ai-hint={shuttleImage.imageHint}
+            <Image
+                src="/images/image copy 2.png"
+                alt="Main Campus Loop Shuttle"
+                data-ai-hint="electric shuttle"
                 fill
                 className="object-cover"
               />
-            )}
           </div>
         </Card>
 
