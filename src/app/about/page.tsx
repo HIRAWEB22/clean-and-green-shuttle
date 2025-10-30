@@ -90,7 +90,7 @@ const sdgs = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
+      <section className="relative h-[70vh] w-full flex items-center justify-center text-center text-white">
         <Image
           src="/images/image copy 4.png"
           alt="Fleet of new electric shuttles"
