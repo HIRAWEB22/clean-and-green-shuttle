@@ -11,7 +11,7 @@ const Logo = () => {
           width={48}
           height={48}
           priority
-          className="object-contain"
+          className="object-contain rounded-md"
         />
       </div>
       <span className="font-bold text-xl hidden sm:inline-block">Clean & Green</span>
