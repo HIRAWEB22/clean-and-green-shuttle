@@ -81,9 +81,9 @@ const precedents = [
 const sdgs = [
     { id: 3, title: "Good Health and Well-being", imageUrl: "/images/heart.png" },
     { id: 7, title: "Affordable and Clean Energy", imageUrl: "/images/sun.jpg" },
-    { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "/images/hexa.png" },
-    { id: 11, title: "Sustainable Cities and Communities" },
-    { id: 13, title: "Climate Action" },
+    { id: 9, title: "Industry, Innovation, and Infrastructure", imageUrl: "/images/hexa.jpg" },
+    { id: 11, title: "Sustainable Cities and Communities", imageUrl: "/images/sdg.jpg" },
+    { id: 13, title: "Climate Action", imageUrl: "/images/climate.jpg" },
 ]
 
 
@@ -176,7 +176,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
                  <h2 className="text-3xl font-bold tracking-tight">Validation and Precedent</h2>
                 <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                    The shift to Low-Speed Electric Vehicles is supported by global market trends and successful local implementations.
+                    The shift to Low-Speed Electric Vehicles is supported by global market trends and a successful local implementation.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
