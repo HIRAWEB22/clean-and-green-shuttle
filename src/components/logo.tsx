@@ -6,7 +6,7 @@ const Logo = () => {
     <div className="flex items-center gap-2">
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary p-1 shadow-md">
         <Image
-          src="/logos/logo-1.png"
+          src="/logos/main-logo.png"
           alt="Clean and Green Shuttle Service Logo"
           width={40}
           height={40}
