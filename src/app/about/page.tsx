@@ -98,11 +98,11 @@ export default function AboutPage() {
             alt={bannerImage.description}
             data-ai-hint={bannerImage.imageHint}
             fill
-            className="object-cover"
+            className="object-cover z-0"
           />
         )}
-        <div className="absolute inset-0 bg-green-900/60" />
-        <div className="relative z-10 px-4 max-w-4xl mx-auto">
+        <div className="absolute inset-0 bg-green-900/60 z-10" />
+        <div className="relative z-20 px-4 max-w-4xl mx-auto">
             <p className="text-sm uppercase tracking-widest text-primary-foreground/80">
                 Campus Transportation: Sustainability and Efficiency
             </p>
