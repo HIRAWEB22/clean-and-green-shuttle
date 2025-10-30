@@ -91,7 +91,7 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[280px]">
+              <SheetContent side="left" className="w-[280px] p-0">
                 <div className="p-4">
                   <Link href="/" className="mb-8 block">
                     <Logo />
