@@ -190,7 +190,7 @@ export default function AboutPage() {
                         </CardHeader>
                         <CardContent>
                             <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>.
+                        </CardContent>
                     </Card>
                 ))}
             </div>
