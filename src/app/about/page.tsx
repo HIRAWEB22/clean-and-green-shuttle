@@ -22,6 +22,7 @@ const images: Record<string, ImagePlaceholder> =
   }, {} as Record<string, ImagePlaceholder>);
 
 const akuhImage = images['akuh-shuttle'];
+const solutionImage = images['shuttle-fleet-background'];
 
 const challenges = [
   {
@@ -158,13 +159,13 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
-                    <Image
-                        src="/images/ppp.png"
-                        alt="Fleet of new electric shuttles"
-                        data-ai-hint="electric shuttle fleet"
+                    {solutionImage && <Image
+                        src={solutionImage.imageUrl}
+                        alt={solutionImage.description}
+                        data-ai-hint={solutionImage.imageHint}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    />}
                 </div>
             </div>
         </div>
@@ -189,7 +190,7 @@ export default function AboutPage() {
                         </CardHeader>
                         <CardContent>
                             <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
+                        </CardContent>.
                     </Card>
                 ))}
             </div>
