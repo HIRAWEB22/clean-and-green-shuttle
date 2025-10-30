@@ -83,7 +83,7 @@ const heroSlides = [
   images['hero-carousel-1'],
   images['hero-carousel-2'],
   images['hero-carousel-3'],
-].filter(Boolean);
+];
 
 
 export default function Home() {
