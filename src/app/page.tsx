@@ -83,12 +83,12 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <Image
           src="/images/bus1.png"
           alt="Clean and Green Shuttle"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
           quality={100}
         />
