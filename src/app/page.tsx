@@ -15,6 +15,7 @@ import { AnimatedCounter } from '@/components/animated-counter';
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { ImpactCarousel } from '@/components/home/impact-carousel';
+import { HeroCarousel } from '@/components/home/hero-carousel';
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -22,7 +23,6 @@ const images: Record<string, ImagePlaceholder> =
     return acc;
   }, {} as Record<string, ImagePlaceholder>);
 
-const heroImage = images['shuttle-fleet-background'];
 
 const fleet = [
   {
@@ -79,22 +79,19 @@ const impactSlides = [
   images['impact-hero1'],
 ].filter(Boolean);
 
+const heroSlides = [
+  images['impact-bus1'],
+  images['impact-bus'],
+  images['impact-hero1'],
+].filter(Boolean);
+
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            data-ai-hint={heroImage.imageHint}
-            fill
-            className="object-cover"
-            priority
-          />
-        )}
+        <HeroCarousel slides={heroSlides} />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex flex-col items-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
