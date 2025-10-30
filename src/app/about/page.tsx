@@ -21,7 +21,7 @@ const images: Record<string, ImagePlaceholder> =
     return acc;
   }, {} as Record<string, ImagePlaceholder>);
 
-const bannerImage = images['sustainability-banner'];
+const bannerImage = images['shuttle-fleet-background'];
 const akuhImage = images['akuh-shuttle'];
 
 const challenges = [
