@@ -37,15 +37,15 @@ export default function CityConnectPage() {
 
         <Card className="mt-8 shadow-lg overflow-hidden">
           <div className="relative h-64 md:h-96 w-full">
-            {shuttleImage && (
+            
               <Image
-                src={shuttleImage.imageUrl}
-                alt={shuttleImage.description}
-                data-ai-hint={shuttleImage.imageHint}
+                src="/images/image copy 3.png"
+                alt="Islamabad City Connect Shuttle"
+                data-ai-hint="electric bus city"
                 fill
                 className="object-cover"
               />
-            )}
+            
           </div>
         </Card>
 
