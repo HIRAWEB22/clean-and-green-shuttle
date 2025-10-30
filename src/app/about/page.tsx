@@ -92,8 +92,8 @@ export default function AboutPage() {
     <>
       <section className="relative h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden rounded-lg">
         <Image
-          src="/images/PPP.PNG"
-          alt="Fleet of new electric shuttles"
+          src="/images/hero1.png"
+          alt="Clean and Green shuttle on a scenic road"
           fill
           className="object-cover"
           priority
@@ -159,9 +159,9 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="/images/hero1.png"
-                        alt="A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital."
-                        data-ai-hint="solar shuttle"
+                        src="/images/PPP.PNG"
+                        alt="Fleet of new electric shuttles"
+                        data-ai-hint="electric shuttle fleet"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -204,12 +204,16 @@ export default function AboutPage() {
             </p>
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
-                    <div key={goal.id} className="flex flex-col items-center w-32 text-center">
-                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300 w-28 h-28 flex items-center justify-center">
-                            <Image 
-                                src={(goal as any).imageUrl || `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`}
-                                alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md object-contain"/>
-                        </a>
+                     <div key={goal.id} className="flex flex-col items-center w-32 text-center">
+                         <div className="w-28 h-28 flex items-center justify-center p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                            <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                                <Image 
+                                    src={(goal as any).imageUrl || `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`}
+                                    alt={`SDG ${goal.id}`} 
+                                    fill
+                                    className="rounded-md object-contain"/>
+                            </a>
+                        </div>
                         <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
                     </div>
                 ))}
