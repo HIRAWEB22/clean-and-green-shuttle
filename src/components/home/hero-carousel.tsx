@@ -40,6 +40,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
                   fill
                   className="object-cover"
                   priority={index === 0}
+                  quality={100}
                 />
               </CarouselItem>
             )
