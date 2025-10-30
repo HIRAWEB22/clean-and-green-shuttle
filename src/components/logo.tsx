@@ -8,7 +8,6 @@ const Logo = () => {
       width={140}
       height={35}
       priority
-      className="dark:invert"
       style={{
         width: 'auto',
         height: 'auto',
