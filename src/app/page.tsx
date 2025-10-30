@@ -88,7 +88,7 @@ export default function Home() {
           src="/images/bus1.png"
           alt="Clean and Green Shuttle"
           fill
-          className="object-cover object-center"
+          className="object-contain"
           priority
           quality={100}
         />
