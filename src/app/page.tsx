@@ -50,21 +50,21 @@ const fleet = [
 
 const testimonials = [
   {
-    name: 'Priya Sharma',
+    name: 'Fatima Khan',
     role: 'Computer Science Student',
     quote:
       'The shuttle service is a lifesaver! I can track it in real-time and never have to worry about being late for class.',
     avatar: images['testimonial-1'],
   },
   {
-    name: 'Rahul Verma',
+    name: 'Ali Ahmed',
     role: 'Business Administration Student',
     quote:
       "It's so convenient and affordable. Plus, it feels good to know I'm contributing to a greener campus. The app is super easy to use!",
     avatar: images['testimonial-2'],
   },
   {
-    name: 'Anjali Mehta',
+    name: 'Ayesha Malik',
     role: 'Arts & Humanities Student',
     quote:
       'I feel much safer commuting within the campus, especially during the evenings. The tracking feature gives me and my parents peace of mind.',
