@@ -159,7 +159,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="/images/ABOUT1.PNG"
+                        src="/images/hero1.png"
                         alt="A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital."
                         data-ai-hint="solar shuttle"
                         fill
