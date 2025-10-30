@@ -8,6 +8,7 @@ const Logo = () => {
       width={140}
       height={35}
       priority
+      className="mix-blend-screen dark:mix-blend-normal"
       style={{
         width: 'auto',
         height: 'auto',
