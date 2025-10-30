@@ -7,6 +7,12 @@
       "imageHint": "electric shuttle bus"
     },
     {
+      "id": "shuttle-fleet-background",
+      "description": "A fleet of new electric shuttles in a warehouse.",
+      "imageUrl": "https://storage.googleapis.com/stabl-media/1141-assets/original.webp",
+      "imageHint": "shuttle fleet"
+    },
+    {
       "id": "campus-map",
       "description": "A stylized map of a university campus for shuttle tracking.",
       "imageUrl": "https://images.unsplash.com/photo-1696469968133-6d2086ce4ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1wdXMlMjBtYXB8ZW58MHx8fHwxNzYxNjQ2NTgxfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -63,7 +69,7 @@
     {
       "id": "akuh-shuttle",
       "description": "A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital.",
-      "imageUrl": "https://plus.unsplash.com/premium_photo-1683140582236-39a70512e1a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "solar shuttle"
     }
   ]
