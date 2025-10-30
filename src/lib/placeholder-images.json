@@ -71,6 +71,24 @@
       "description": "A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital.",
       "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "solar shuttle"
+    },
+    {
+      "id": "impact-bus1",
+      "description": "A modern electric shuttle bus",
+      "imageUrl": "/images/bus1.png",
+      "imageHint": "electric bus"
+    },
+    {
+      "id": "impact-bus",
+      "description": "Side view of a clean energy shuttle",
+      "imageUrl": "/images/bus.png",
+      "imageHint": "clean bus"
+    },
+    {
+      "id": "impact-hero1",
+      "description": "Shuttle bus in a futuristic city setting",
+      "imageUrl": "/images/hero1.png",
+      "imageHint": "future bus"
     }
   ]
 }

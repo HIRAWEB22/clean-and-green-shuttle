@@ -74,9 +74,9 @@ const testimonials = [
 ];
 
 const impactSlides = [
-  images['hero-shuttle'],
-  images['shuttle-main-campus'],
-  images['shuttle-in-city'],
+  images['impact-bus1'],
+  images['impact-bus'],
+  images['impact-hero1'],
 ].filter(Boolean);
 
 
@@ -92,6 +92,7 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
             fill
             className="object-cover"
+            priority
           />
         )}
         <div className="absolute inset-0 bg-black/40" />
