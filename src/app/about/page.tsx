@@ -97,8 +97,8 @@ export default function AboutPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-green-900/60" />
-        <div className="relative z-10 px-4 max-w-4xl mx-auto">
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 px-4 py-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg">
             <p className="text-sm uppercase tracking-widest text-primary-foreground/80">
                 Campus Transportation: Sustainability and Efficiency
             </p>
