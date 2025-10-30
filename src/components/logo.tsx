@@ -14,9 +14,7 @@ const Logo = () => {
   const logoImage = images['clean-and-green-logo'];
 
   if (!logoImage) {
-    return (
-        <span className="text-xl font-bold">Clean &amp; Green</span>
-    );
+    return <span className="text-xl font-bold">Clean &amp; Green</span>;
   }
 
   return (
@@ -27,6 +25,10 @@ const Logo = () => {
       width={140}
       height={35}
       priority
+      style={{
+        width: 'auto',
+        height: 'auto',
+      }}
     />
   );
 };

@@ -159,11 +159,11 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
-                     {images['hero-shuttle'] && (
+                     {akuhImage && (
                         <Image
-                            src={images['hero-shuttle'].imageUrl}
-                            alt={images['hero-shuttle'].description}
-                            data-ai-hint={images['hero-shuttle'].imageHint}
+                            src={akuhImage.imageUrl}
+                            alt={akuhImage.description}
+                            data-ai-hint={akuhImage.imageHint}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
