@@ -158,15 +158,13 @@ export default function AboutPage() {
                     </div>
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
-                     {akuhImage && (
-                        <Image
-                            src={akuhImage.imageUrl}
-                            alt={akuhImage.description}
-                            data-ai-hint={akuhImage.imageHint}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                    )}
+                    <Image
+                        src="/images/ABOUT1.PNG"
+                        alt="A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital."
+                        data-ai-hint="solar shuttle"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                 </div>
             </div>
         </div>
