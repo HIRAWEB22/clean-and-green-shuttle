@@ -33,13 +33,13 @@
     {
       "id": "testimonial-1",
       "description": "A smiling student.",
-      "imageUrl": "https://images.unsplash.com/photo-1631131428457-3c14bdcb81d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzbWlsaW5nJTIwc3R1ZGVudHxlbnwwfHx8fDE3NjE1ODM1MzJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1631131428457-3c14bdcb81d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzbWlsaW5nJTIwc3R1ZGVudHxlbnwwfHx8fDE3NjE1ODM1MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smiling student"
     },
     {
       "id": "testimonial-2",
       "description": "Another smiling student.",
-      "imageUrl": "https://images.unsplash.com/photo-1565598621680-94ac0c22b148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoYXBweSUyMHN0dWRlbnR8ZW58MHx8fHwxNzYxNjQ3Njk0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1565598621680-94ac0c22b148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoYXBweSUyMHN0dWRlbnR8ZW58MHx8fHwxNzYxNjQ3Njk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy student"
     },
     {
@@ -69,25 +69,25 @@
     {
       "id": "akuh-shuttle",
       "description": "A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital.",
-      "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "solar shuttle"
     },
     {
-      "id": "impact-bus",
-      "description": "Side view of a clean energy shuttle on a city street.",
-      "imageUrl": "/images/bus.png",
-      "imageHint": "clean bus"
-    },
-    {
-      "id": "impact-bus1",
+      "id": "hero-carousel-1",
       "description": "A modern electric shuttle bus with motion blur.",
       "imageUrl": "/images/bus1.png",
       "imageHint": "electric bus"
     },
     {
-      "id": "impact-bus2",
-      "description": "A modern electric shuttle bus at a bus stop.",
-      "imageUrl": "/images/bus2.png",
+      "id": "hero-carousel-2",
+      "description": "Side view of a clean energy shuttle on a city street.",
+      "imageUrl": "/images/bus.png",
+      "imageHint": "clean bus"
+    },
+    {
+      "id": "hero-carousel-3",
+      "description": "A white electric shuttle bus driving on a coastal road.",
+      "imageUrl": "/images/hero1.png",
       "imageHint": "future bus"
     },
     {
