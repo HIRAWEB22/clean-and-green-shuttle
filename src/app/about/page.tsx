@@ -92,7 +92,7 @@ export default function AboutPage() {
     <>
       <section className="relative h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden rounded-lg">
         <Image
-          src="/images/hero1.png"
+          src="/images/PPP.PNG"
           alt="Fleet of new electric shuttles"
           fill
           className="object-cover"
