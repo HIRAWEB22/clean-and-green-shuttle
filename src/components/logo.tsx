@@ -10,7 +10,7 @@ const Logo = () => {
         width={48}
         height={48}
         priority
-        className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary/50"
+        className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary/50 mix-blend-darken"
       />
       <span className="font-bold text-lg hidden sm:inline-block leading-tight">
         Clean & Green
