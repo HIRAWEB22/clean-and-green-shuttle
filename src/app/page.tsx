@@ -73,14 +73,13 @@ const testimonials = [
   },
 ];
 
-const impactSlides = [
-  images['impact-bus'],
-  images['impact-bus2'],
-  images['impact-hero1'],
-].filter(Boolean);
-
-
 export default function Home() {
+  const impactSlides = [
+    images['impact-bus'],
+    images['impact-bus2'],
+    images['impact-hero1'],
+  ].filter(Boolean);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
