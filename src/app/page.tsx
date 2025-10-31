@@ -156,13 +156,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative container text-center z-10">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold animate-fade-in-down">
             Our Collective Impact
           </h2>
-          <p className="mt-4 text-lg text-neutral-200 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-neutral-200 max-w-2xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
             Every ride contributes to a cleaner, greener campus for everyone.
           </p>
-          <div className="mt-8 bg-white/20 backdrop-blur-sm p-8 rounded-lg shadow-xl inline-block">
+          <div className="mt-8 bg-white/20 backdrop-blur-sm p-8 rounded-lg shadow-xl inline-block animate-fade-in-down [animation-delay:0.6s]">
             <p className="text-sm font-medium uppercase tracking-widest text-neutral-100">
               CO₂ Saved (in kg)
             </p>
