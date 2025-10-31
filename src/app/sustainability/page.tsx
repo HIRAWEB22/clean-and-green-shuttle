@@ -63,9 +63,9 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const sdgs = [
-    { id: 3, title: "Good Health and Well-being" },
-    { id: 11, title: "Sustainable Cities and Communities" },
-    { id: 13, title: "Climate Action" },
+    { id: 3, title: "Good Health and Well-being", imageUrl: "/images/heart.png" },
+    { id: 11, title: "Sustainable Cities and Communities", imageUrl: "/images/sdg.jpg" },
+    { id: 13, title: "Climate Action", imageUrl: "/images/climate.jpg" },
 ]
 
 export default function SustainabilityPage() {
@@ -184,7 +184,7 @@ export default function SustainabilityPage() {
                 {sdgs.map(goal => (
                     <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
                          <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
-                            <Image src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
+                            <Image src={goal.imageUrl} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
                         </a>
                         <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
                     </div>
