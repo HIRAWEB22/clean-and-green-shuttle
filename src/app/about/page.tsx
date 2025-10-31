@@ -1,7 +1,6 @@
 
 import Image from 'next/image';
 import {
-  Heart,
   Globe,
   DollarSign,
   Accessibility,
@@ -12,18 +11,7 @@ import {
   Users,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import imageData from '@/lib/placeholder-images.json';
-import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { AnimatedSection } from '@/components/home/animated-section';
-
-const images: Record<string, ImagePlaceholder> =
-  imageData.placeholderImages.reduce((acc, img) => {
-    acc[img.id] = img;
-    return acc;
-  }, {} as Record<string, ImagePlaceholder>);
-
-const akuhImage = images['akuh-shuttle'];
-const solutionImage = images['shuttle-fleet-background'];
 
 const challenges = [
   {
@@ -161,9 +149,9 @@ export default function AboutPage() {
                 </div>
                 <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="/images/ppp.png"
+                        src="/images/bus2.png"
                         alt="Fleet of new electric shuttles"
-                        data-ai-hint="electric shuttle fleet"
+                        data-ai-hint="electric bus road"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
