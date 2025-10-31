@@ -83,10 +83,10 @@ export default function SustainabilityPage() {
         )}
         <div className="absolute inset-0 bg-green-900/60" />
         <div className="relative z-10 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold animate-fade-in-down">
             Clean and Green Shuttle Service
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto">
+          <p className="mt-4 text-lg max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
             Our shuttle service is more than a ride. It's a promise for a
             sustainable future.
           </p>
