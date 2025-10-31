@@ -71,10 +71,10 @@ export default function SustainabilityPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 px-4">
-          <h1 className="text-4xl md:text-5xl font-bold animate-fade-in-down" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
+          <h1 className="text-4xl md:text-5xl font-bold animate-zoom-in-fade-in" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
             Clean and Green Shuttle Service
           </h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.6)'}}>
+          <p className="mt-4 text-lg max-w-3xl mx-auto animate-zoom-in-fade-in [animation-delay:0.3s]" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.6)'}}>
             Our shuttle service is more than a ride. It's a promise for a
             sustainable future.
           </p>
@@ -189,5 +189,3 @@ export default function SustainabilityPage() {
     </>
   );
 }
-
-    
