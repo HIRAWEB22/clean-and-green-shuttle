@@ -1,7 +1,7 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Clock, MapPin } from 'lucide-react';
+import { AnimatedSection } from '@/components/home/animated-section';
 
 const features = [
   { text: 'Connects all major academic buildings, libraries, and student centers.' },
@@ -16,7 +16,7 @@ const stops = [
 
 export default function CampusLoopPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <AnimatedSection as="div" className="container py-12 md:py-20">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Main Campus Loop
@@ -80,6 +80,6 @@ export default function CampusLoopPage() {
           </Card>
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }

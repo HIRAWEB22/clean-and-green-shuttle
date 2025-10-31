@@ -2,10 +2,11 @@
 import { AiOptimizerForm } from "@/components/ai-optimizer-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ListChecks, Lightbulb, Bot } from "lucide-react";
+import { AnimatedSection } from "@/components/home/animated-section";
 
 export default function AdminPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <AnimatedSection as="div" className="container py-12 md:py-20">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           AI Route Optimization
@@ -57,6 +58,3 @@ export default function AdminPage() {
       </Card>
 
       <AiOptimizerForm />
-    </div>
-  );
-}
