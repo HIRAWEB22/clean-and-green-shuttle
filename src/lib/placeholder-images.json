@@ -45,13 +45,13 @@
     {
       "id": "testimonial-3",
       "description": "A third smiling student.",
-      "imageUrl": "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwc3R1ZGVudHxlbnwwfHx8fDE3NjE2NDk4NDV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwc3R1ZGVudHxlbnwwfHx8fDE3NjE2NDk4NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university student"
     },
     {
       "id": "shuttle-main-campus",
       "description": "A multi-passenger electric golf cart shuttle on a university campus.",
-      "imageUrl": "https://images.unsplash.com/photo-1593973703964-b586e68d56a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMGdvbGYlMjBjYXJ0JTIwc2h1dHRsZXxlbnwwfHx8fDE3MjA3MzMזMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1593973703964-b586e68d56a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMGdvbGYlMjBjYXJ0JTIwc2h1dHRsZXxlbnwwfHx8fDE3MjA3MzMזMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "electric shuttle cart"
     },
     {
