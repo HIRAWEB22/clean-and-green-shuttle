@@ -95,7 +95,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         <div className="relative z-10 flex flex-col items-center px-4 md:px-12 max-w-2xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 animate-fade-in-down" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 whitespace-nowrap animate-fade-in-down" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
             Clean & Green Shuttle Service
           </h1>
           <p className="text-lg md:text-xl text-neutral-200 mb-8 animate-fade-in-down [animation-delay:0.3s]" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.6)'}}>
