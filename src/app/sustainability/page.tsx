@@ -60,7 +60,7 @@ const sdgs = [
 export default function SustainabilityPage() {
   return (
     <>
-      <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
+      <AnimatedSection as="section" className="relative h-[70vh] w-full flex items-center justify-center text-center text-white">
         <Image
           src="/images/image copy 5.png"
           alt="Clean and Green Shuttle Service"
