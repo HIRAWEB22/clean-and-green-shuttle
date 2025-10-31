@@ -18,10 +18,10 @@ export default function CampusLoopPage() {
   return (
     <AnimatedSection as="div" className="container py-12 md:py-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight animate-fade-in-down">
           Main Campus Loop
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-muted-foreground animate-fade-in-down [animation-delay:0.3s]">
           Your reliable, eco-friendly ride across campus. The Main Campus Loop is designed for quick and convenient travel between all essential university locations.
         </p>
 

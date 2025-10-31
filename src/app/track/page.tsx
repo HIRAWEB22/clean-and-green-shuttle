@@ -154,10 +154,10 @@ export default function TrackPage() {
     <AnimatedSection as="div" className="container py-8 md:py-12">
        <Tabs value={activeRoute} onValueChange={(value) => setActiveRoute(value as RouteId)} className="w-full">
             <div className="text-center mb-8">
-                <h1 className="text-4xl font-bold tracking-tight">
+                <h1 className="text-4xl font-bold tracking-tight animate-fade-in-down">
                 Live Shuttle Tracker
                 </h1>
-                <p className="mt-2 text-lg text-muted-foreground">
+                <p className="mt-2 text-lg text-muted-foreground animate-fade-in-down [animation-delay:0.3s]">
                 Follow the shuttle in real-time on campus or in the city.
                 </p>
                 <TabsList className="mt-4 mx-auto">

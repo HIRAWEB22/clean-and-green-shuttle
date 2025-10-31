@@ -28,10 +28,10 @@ export default function FeedbackPage() {
   return (
     <AnimatedSection as="div" className="container py-12 md:py-20">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight animate-fade-in-down">
           Get In Touch
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
           We value your feedback. Let us know how we can improve the Clean and Green Shuttle Service.
         </p>
       </div>

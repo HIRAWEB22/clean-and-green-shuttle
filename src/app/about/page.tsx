@@ -103,10 +103,10 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 px-4 py-8 max-w-4xl mx-auto backdrop-blur-sm bg-black/20 rounded-lg">
-            <p className="text-sm uppercase tracking-widest text-primary-foreground/80">
+            <p className="text-sm uppercase tracking-widest text-primary-foreground/80 animate-fade-in-down">
                 Campus Transportation: Sustainability and Efficiency
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold mt-2">
+            <h1 className="text-3xl md:text-5xl font-bold mt-2 animate-fade-in-down [animation-delay:0.3s]">
                 Strategic Analysis of the Clean & Green Shuttle Service
             </h1>
         </div>
