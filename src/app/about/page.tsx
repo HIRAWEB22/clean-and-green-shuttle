@@ -114,8 +114,8 @@ export default function AboutPage() {
       
       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
         <div className="container text-center max-w-5xl">
-            <h2 className="text-3xl font-bold tracking-tight">Addressing Systemic Deficiencies in Campus Mobility</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight animate-fade-in-down">Addressing Systemic Deficiencies in Campus Mobility</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
                 Our campus community faces key transportation issues that impact operational efficiency and compromise student well-being.
             </p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -140,8 +140,8 @@ export default function AboutPage() {
         <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="max-w-xl">
-                    <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line Framework</h2>
-                    <p className="mt-4 text-lg text-muted-foreground">
+                    <h2 className="text-3xl font-bold tracking-tight animate-fade-in-down">Our Solution: A Triple Bottom Line Framework</h2>
+                    <p className="mt-4 text-lg text-muted-foreground animate-fade-in-down [animation-delay:0.3s]">
                         Our electric fleet delivers social, environmental, and financial benefits, measured by the Triple Bottom Line (TBL) framework. This positions the project as a strategic asset that reduces long-term costs.
                     </p>
                     <div className="mt-8 space-y-6">
@@ -175,14 +175,14 @@ export default function AboutPage() {
        <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
         <div className="container">
             <div className="text-center mb-12">
-                 <h2 className="text-3xl font-bold tracking-tight">Validation and Precedent</h2>
-                <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                 <h2 className="text-3xl font-bold tracking-tight animate-fade-in-down">Validation and Precedent</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
                     The shift to Low-Speed Electric Vehicles is supported by global market trends and a successful local implementation.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 {precedents.map(item => (
-                     <Card key={item.title} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                     <Card key={item.title} className="shadow-lg hover:shadow-xl transition-all duration-300 hover-translate-y-2">
                         <CardHeader>
                              <div className="flex items-center gap-4">
                                 {item.icon}
@@ -200,8 +200,8 @@ export default function AboutPage() {
       
       <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container text-center">
-            <h2 className="text-3xl font-bold">Alignment with UN Sustainable Development Goals</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold animate-fade-in-down">Alignment with UN Sustainable Development Goals</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
                 Our initiative actively contributes to the United Nations Sustainable Development Goals (SDGs), making a global impact from our campus.
             </p>
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
