@@ -7,12 +7,14 @@ const Logo = () => {
       <Image
         src="/logos/main-logo.png"
         alt="Clean and Green Shuttle Service Logo"
-        width={56}
-        height={56}
+        width={48}
+        height={48}
         priority
-        className="h-14 w-14 rounded-full object-cover shadow-md"
+        className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary/50"
       />
-      <span className="font-bold text-xl hidden sm:inline-block">Clean & Green</span>
+      <span className="font-bold text-lg hidden sm:inline-block leading-tight">
+        Clean & Green
+      </span>
     </div>
   );
 };
