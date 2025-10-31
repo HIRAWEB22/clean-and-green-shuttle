@@ -146,7 +146,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* CO2 Saved Counter Section */}
-      <AnimatedSection as="section" className="relative py-20 md:py-28 text-white">
+      <AnimatedSection as="section" className="relative py-32 md:py-48 text-white">
         <Image
           src="/images/image copy.png"
           alt="A white electric shuttle bus driving on a coastal road."
