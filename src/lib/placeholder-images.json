@@ -63,20 +63,14 @@
     {
       "id": "shuttle-in-city",
       "description": "An electric shuttle bus driving on a city street.",
-      "imageUrl": "https://images.unsplash.com/photo-1626834310149-15a1d1a8582f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGJ1c3xlbnwwfHx8fDE3MjE4MzI3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1626834310149-15a1d1a8582f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGJ1c3xlbnwwfHx8fDE3MjE4MzI3MTB8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "electric bus"
     },
     {
       "id": "akuh-shuttle",
       "description": "A solar-powered electric shuttle, similar to the one used at Aga Khan University Hospital.",
-      "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "solar shuttle"
-    },
-    {
-      "id": "impact-bus1",
-      "description": "A modern electric shuttle bus with motion blur.",
-      "imageUrl": "/images/bus1.png",
-      "imageHint": "electric bus"
     },
     {
       "id": "impact-bus",
@@ -85,9 +79,15 @@
       "imageHint": "clean bus"
     },
     {
+      "id": "impact-bus2",
+      "description": "A white electric shuttle bus on the road.",
+      "imageUrl": "/images/bus2.png",
+      "imageHint": "electric bus road"
+    },
+    {
       "id": "impact-hero1",
       "description": "A white electric shuttle bus driving on a coastal road.",
-      "imageUrl": "/images/hero1.png",
+      "imageUrl": "/images/image copy.png",
       "imageHint": "future bus"
     }
   ]
