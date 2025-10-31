@@ -67,7 +67,7 @@ export default function SustainabilityPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-green-900/60" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 px-4">
           <h1 className="text-4xl md:text-5xl font-bold animate-fade-in-down">
             Clean and Green Shuttle Service
