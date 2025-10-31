@@ -26,7 +26,6 @@ const navLinks = [
   { href: "/sustainability", label: "Sustainability", icon: Leaf },
   { href: "/about", label: "About", icon: BookUser },
   { href: "/feedback", label: "Feedback", icon: MessageSquare },
-  { href: "/admin", label: "Admin", icon: Shield },
 ];
 
 export function Header() {
