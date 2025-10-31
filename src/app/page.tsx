@@ -14,7 +14,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AnimatedCounter } from '@/components/animated-counter';
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
-import { ImpactCarousel } from '@/components/home/impact-carousel';
 import { AnimatedSection } from '@/components/home/animated-section';
 
 const images: Record<string, ImagePlaceholder> =
@@ -74,12 +73,6 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const impactSlides = [
-    images['impact-bus'],
-    images['impact-bus2'],
-    images['impact-hero1'],
-  ].filter(Boolean);
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -154,7 +147,13 @@ export default function Home() {
 
       {/* CO2 Saved Counter Section */}
       <AnimatedSection as="section" className="relative py-20 md:py-28 text-white">
-        <ImpactCarousel slides={impactSlides} />
+        <Image
+          src="/images/image copy.png"
+          alt="A white electric shuttle bus driving on a coastal road."
+          data-ai-hint="future bus"
+          fill
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative container text-center z-10">
           <h2 className="text-3xl md:text-4xl font-bold">
