@@ -182,7 +182,7 @@ export default function SustainabilityPage() {
             </p>
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
-                    <div key={goal.id} className="flex flex-col items-center max-w-[120px] text-center">
+                    <div key={goal.id} className="flex flex-col items-center w-32 text-center">
                          <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
                             <Image src={goal.imageUrl} alt={`SDG ${goal.id}`} width={100} height={100} className="rounded-md"/>
                         </a>
