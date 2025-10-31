@@ -15,6 +15,7 @@ import { AnimatedCounter } from '@/components/animated-counter';
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { ImpactCarousel } from '@/components/home/impact-carousel';
+import { AnimatedSection } from '@/components/home/animated-section';
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -114,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* Meet Our Fleet Section */}
-      <section id="fleet" className="py-16 md:py-24 bg-background">
+      <AnimatedSection as="section" id="fleet" className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">Meet Our Fleet</h2>
@@ -150,10 +151,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CO2 Saved Counter Section */}
-      <section className="relative py-20 md:py-28 text-white">
+      <AnimatedSection as="section" className="relative py-20 md:py-28 text-white">
         <Image
           src="/images/image copy.png"
           alt="Background showing a clean energy bus"
@@ -177,10 +178,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 md:py-24 bg-background">
+      <AnimatedSection as="section" id="testimonials" className="py-16 md:py-24 bg-background">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold">
@@ -229,7 +230,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }
