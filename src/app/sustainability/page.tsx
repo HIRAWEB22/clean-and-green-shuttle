@@ -16,6 +16,7 @@ import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 import { AnimatedCounter } from "@/components/animated-counter";
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from "@/lib/placeholder-images";
+import { AnimatedSection } from "@/components/home/animated-section";
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -70,7 +71,7 @@ const sdgs = [
 export default function SustainabilityPage() {
   return (
     <>
-      <section className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
+      <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
         {bannerImage && (
           <Image
             src={bannerImage.imageUrl}
@@ -90,9 +91,9 @@ export default function SustainabilityPage() {
             sustainable future.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-12 md:py-20">
+      <AnimatedSection as="section" className="py-12 md:py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {stats.map((stat) => (
@@ -116,9 +117,9 @@ export default function SustainabilityPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-12 md:py-20 bg-secondary">
+      <AnimatedSection as="section" className="py-12 md:py-20 bg-secondary">
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 className="text-3xl font-bold">Electric vs. Fuel: The Numbers</h2>
@@ -171,9 +172,9 @@ export default function SustainabilityPage() {
                 </CardContent>
             </Card>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-12 md:py-20">
+      <AnimatedSection as="section" className="py-12 md:py-20">
         <div className="container text-center">
             <h2 className="text-3xl font-bold">Aligning with Global Goals</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -190,7 +191,7 @@ export default function SustainabilityPage() {
                 ))}
             </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

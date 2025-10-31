@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FeedbackForm } from "@/components/feedback-form";
+import { AnimatedSection } from "@/components/home/animated-section";
 
 const contactDetails = [
   {
@@ -25,7 +26,7 @@ const contactDetails = [
 
 export default function FeedbackPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <AnimatedSection as="div" className="container py-12 md:py-20">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Get In Touch
@@ -66,6 +67,6 @@ export default function FeedbackPage() {
             ))}
         </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }

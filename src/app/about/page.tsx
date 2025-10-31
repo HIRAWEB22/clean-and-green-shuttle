@@ -14,6 +14,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import imageData from '@/lib/placeholder-images.json';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
+import { AnimatedSection } from '@/components/home/animated-section';
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -91,7 +92,7 @@ const sdgs = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden rounded-lg">
+      <AnimatedSection as="section" className="relative h-[70vh] w-full flex items-center justify-center text-center text-white overflow-hidden rounded-lg">
         <Image
           src="/images/hero1.png"
           alt="Clean and Green shuttle on a scenic road"
@@ -109,9 +110,9 @@ export default function AboutPage() {
                 Strategic Analysis of the Clean & Green Shuttle Service
             </h1>
         </div>
-      </section>
+      </AnimatedSection>
       
-      <section className="py-16 md:py-24 bg-background">
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
         <div className="container text-center max-w-5xl">
             <h2 className="text-3xl font-bold tracking-tight">Addressing Systemic Deficiencies in Campus Mobility</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -133,9 +134,9 @@ export default function AboutPage() {
                 ))}
             </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-16 md:py-24 bg-secondary">
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="max-w-xl">
@@ -169,9 +170,9 @@ export default function AboutPage() {
                 </div>
             </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-       <section className="py-16 md:py-24 bg-background">
+       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
         <div className="container">
             <div className="text-center mb-12">
                  <h2 className="text-3xl font-bold tracking-tight">Validation and Precedent</h2>
@@ -195,9 +196,9 @@ export default function AboutPage() {
                 ))}
             </div>
         </div>
-      </section>
+      </AnimatedSection>
       
-      <section className="py-16 md:py-24 bg-secondary">
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container text-center">
             <h2 className="text-3xl font-bold">Alignment with UN Sustainable Development Goals</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -220,7 +221,7 @@ export default function AboutPage() {
                 ))}
             </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import type { ImagePlaceholder } from "@/lib/placeholder-images";
+import { AnimatedSection } from "@/components/home/animated-section";
 
 const images: Record<string, ImagePlaceholder> =
   imageData.placeholderImages.reduce((acc, img) => {
@@ -150,7 +151,7 @@ export default function TrackPage() {
   };
 
   return (
-    <div className="container py-8 md:py-12">
+    <AnimatedSection as="div" className="container py-8 md:py-12">
        <Tabs value={activeRoute} onValueChange={(value) => setActiveRoute(value as RouteId)} className="w-full">
             <div className="text-center mb-8">
                 <h1 className="text-4xl font-bold tracking-tight">
@@ -276,6 +277,6 @@ export default function TrackPage() {
                 </div>
             </div>
       </Tabs>
-    </div>
+    </AnimatedSection>
   );
 }
