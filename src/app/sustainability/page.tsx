@@ -14,18 +14,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 import { AnimatedCounter } from "@/components/animated-counter";
-import imageData from '@/lib/placeholder-images.json';
-import type { ImagePlaceholder } from "@/lib/placeholder-images";
 import { AnimatedSection } from "@/components/home/animated-section";
-
-const images: Record<string, ImagePlaceholder> =
-  imageData.placeholderImages.reduce((acc, img) => {
-    acc[img.id] = img;
-    return acc;
-  }, {} as Record<string, ImagePlaceholder>);
-
-
-const bannerImage = images["sustainability-banner"];
 
 const stats = [
   {
@@ -72,15 +61,12 @@ export default function SustainabilityPage() {
   return (
     <>
       <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white">
-        {bannerImage && (
-          <Image
-            src={bannerImage.imageUrl}
-            alt={bannerImage.description}
-            data-ai-hint={bannerImage.imageHint}
-            fill
-            className="object-cover"
-          />
-        )}
+        <Image
+          src="/images/image copy 5.png"
+          alt="Clean and Green Shuttle Service"
+          fill
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-green-900/60" />
         <div className="relative z-10 px-4">
           <h1 className="text-4xl md:text-5xl font-bold animate-fade-in-down">
@@ -183,13 +169,15 @@ export default function SustainabilityPage() {
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
                      <div key={goal.id} className="flex flex-col items-center w-32 text-center">
-                         <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block w-28 h-28 p-1 bg-white rounded-md shadow-md hover:scale-105 transition-transform duration-300 relative">
-                            <Image 
-                                src={goal.imageUrl} 
-                                alt={`SDG ${goal.id}`} 
-                                fill
-                                className="rounded-md object-contain p-2"/>
-                        </a>
+                         <div className="w-28 h-28 flex items-center justify-center p-1 bg-white rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                            <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
+                                <Image 
+                                    src={goal.imageUrl} 
+                                    alt={`SDG ${goal.id}`} 
+                                    fill
+                                    className="rounded-md object-contain p-2"/>
+                            </a>
+                        </div>
                         <h4 className="mt-3 font-semibold text-xs h-8">{goal.title}</h4>
                     </div>
                 ))}
@@ -199,3 +187,5 @@ export default function SustainabilityPage() {
     </>
   );
 }
+
+    
