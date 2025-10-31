@@ -210,9 +210,9 @@ export default function Home() {
                       </Avatar>
                     )}
                     <div className="ml-4">
-                      <CardTitle className="text-base">
+                      <p className="font-semibold text-base">
                         {testimonial.name}
-                      </CardTitle>
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         {testimonial.role}
                       </p>
