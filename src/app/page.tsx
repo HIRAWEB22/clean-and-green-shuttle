@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <Image
           src="/images/image.png"
           alt="Hero image for Clean and Green Shuttle Service"
@@ -92,12 +92,12 @@ export default function Home() {
           priority
           quality={100}
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 flex flex-col items-center px-4">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+        <div className="relative z-10 flex flex-col items-start px-4 md:px-12 max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4" style={{textShadow: '2px 2px 8px rgba(0,0,0,0.7)'}}>
             Clean & Green Shuttle Service
           </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-neutral-200 mb-8" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.6)'}}>
+          <p className="text-lg md:text-xl text-neutral-200 mb-8" style={{textShadow: '1px 1px 4px rgba(0,0,0,0.6)'}}>
             The future of campus and city mobility is here. Clean, efficient, and always
             on time.
           </p>
