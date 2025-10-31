@@ -207,13 +207,13 @@ export default function AboutPage() {
             <div className="mt-10 flex justify-center gap-4 md:gap-8 flex-wrap">
                 {sdgs.map(goal => (
                      <div key={goal.id} className="flex flex-col items-center w-32 text-center">
-                         <div className="w-28 h-28 flex items-center justify-center p-1 bg-background rounded-md shadow-md hover:scale-105 transition-transform duration-300">
+                         <div className="w-28 h-28 flex items-center justify-center p-1 bg-white rounded-md shadow-md hover:scale-105 transition-transform duration-300">
                             <a href={`https://sdgs.un.org/goals/goal${goal.id}`} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative">
                                 <Image 
                                     src={(goal as any).imageUrl || `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/E_SDG_Icons-${String(goal.id).padStart(2, '0')}.jpg`}
                                     alt={`SDG ${goal.id}`} 
                                     fill
-                                    className="rounded-md object-contain"/>
+                                    className="rounded-md object-contain p-2"/>
                             </a>
                         </div>
                         <h4 className="mt-3 font-semibold text-xs">{goal.title}</h4>
