@@ -63,7 +63,6 @@ export function Footer() {
           end: "bottom bottom",
         },
         scaleX: 0.95,
-        borderRadius: "30px",
         transformOrigin: "center center",
         ease: "none",
       });
@@ -73,7 +72,7 @@ export function Footer() {
   return (
     <footer className="bg-background text-foreground">
       <div 
-        className="tp-gsap-bg rounded-lg text-primary-foreground p-8"
+        className="tp-gsap-bg text-primary-foreground p-8"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
       >
         <div className="container">
@@ -101,6 +100,7 @@ export function Footer() {
                     alt="Clean and Green Logo"
                     width={48}
                     height={48}
+                    className="bg-transparent"
                   />
                   <span className="text-lg font-bold text-white">Clean & Green</span>
                 </Link>
