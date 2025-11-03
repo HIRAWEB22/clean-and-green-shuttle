@@ -76,7 +76,7 @@ export function Footer() {
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
       >
         <div className="container">
-          <div className="pb-6 mb-6 border-b border-white/10">
+          <div className="pb-8 mb-8 border-b border-white/10">
             <div className="grid grid-cols-1 items-center gap-4">
               <div className="wow tpfadeUp">
                 <div className="tp-footer__top-text text-center">
