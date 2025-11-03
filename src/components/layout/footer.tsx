@@ -1,4 +1,3 @@
-
 "use client";
 
 import { gsap } from "gsap";
@@ -6,21 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import SocialLinks from "@/components/social-links";
-import ContactIcon from "@/svg/contact-icon";
-import EmailIcon from "@/svg/email";
-import PhoneIcon from "@/svg/phone-icon";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
-import { MoveRight } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 // footer_content
 const footer_content = {
-  title: <>Ride Green. Ride Smart. The future of campus mobility.</>,
-  description: (
-    <>
-      Our team is dedicated to providing a seamless, reliable, and sustainable
-      transportation solution for the campus community.
-    </>
-  ),
+  title: "Ride Green. Ride Smart. The future of campus mobility.",
+  description:
+    "Our team is dedicated to providing a seamless, reliable, and sustainable transportation solution for the campus community.",
   phone: "+1 (234) 567-890",
   contact_mail: "support@cleanandgreen.edu",
 
@@ -34,10 +26,7 @@ const footer_content = {
   footer_links: [
     {
       id: 1,
-      cls_1: "col-xl-3 col-lg-3 col-md-5",
-      cls_2: "footer-col-2",
       title: "Our Fleet",
-      delay: ".7s",
       links: [
         { name: "Main Campus Loop", link: "/fleet/campus-loop" },
         { name: "Islamabad City Connect", link: "/fleet/city-connect" },
@@ -45,10 +34,7 @@ const footer_content = {
     },
     {
       id: 2,
-      cls_1: "col-xl-2 col-lg-2 col-md-6",
-      cls_2: "footer-col-3",
       title: "Other Pages",
-      delay: ".9s",
       links: [
         { name: "Home", link: "/" },
         { name: "About", link: "/about" },
@@ -84,15 +70,22 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="pb-12 fix bg-background text-foreground">
+    <footer className="pb-12 bg-background text-foreground">
       <div className="tp-footer__pl-pr p-relative container">
-        <div className="footer-black-bg tp-gsap-bg bg-card border-t"></div>
-        <div className="tp-footer__area pt-20">
+        <div className="footer-black-bg tp-gsap-bg bg-card border-t" style={{
+            backgroundColor: 'hsl(228, 44%, 7%)', 
+            color: 'hsl(210, 40%, 98%)',
+            borderTopLeftRadius: '30px',
+            borderTopRightRadius: '30px',
+            borderBottomLeftRadius: '30px',
+            borderBottomRightRadius: '30px'
+        }}></div>
+        <div className="tp-footer__area pt-20" style={{color: 'hsl(210, 40%, 98%)'}}>
           <div className="container">
-            <div className="tp-footer__border-bottom pb-6 mb-6 border-b">
+            <div className="tp-footer__border-bottom pb-6 mb-6 border-b border-white/10">
               <div className="row align-items-center">
                 <div
-                  className="col-md-8 wow tpfadeUp"
+                  className="col-md-12 wow tpfadeUp"
                   data-wow-duration=".9s"
                   data-wow-delay=".3s"
                 >
@@ -100,25 +93,13 @@ export function Footer() {
                     <span className="text-2xl font-bold">{title}</span>
                   </div>
                 </div>
-                <div
-                  className="col-md-4 wow tpfadeUp text-right"
-                  data-wow-duration=".9s"
-                  data-wow-delay=".5s"
-                >
-                  <Link
-                    href="/track"
-                    className="inline-flex items-center gap-2 text-primary hover:underline"
-                  >
-                    Track a Shuttle <MoveRight />
-                  </Link>
-                </div>
               </div>
             </div>
 
             <div className="tp-footer__top-space">
               <div className="row">
                 <div
-                  className="col-xl-4 col-lg-4 col-md-7 pb-8 wow tpfadeUp"
+                  className="col-xl-4 col-lg-4 col-md-6 pb-8 wow tpfadeUp"
                   data-wow-duration=".9s"
                   data-wow-delay=".5s"
                 >
@@ -131,10 +112,10 @@ export function Footer() {
                         height={48}
                         className="rounded-full bg-white p-1"
                       />
-                      <span className="text-lg font-bold">Clean & Green</span>
+                      <span className="text-lg font-bold text-white">Clean & Green</span>
                     </Link>
                     <div className="tp-footer__text">
-                      <p className="text-muted-foreground">{description}</p>
+                      <p className="text-white/70">{description}</p>
                     </div>
                     <div className="tp-footer__social mt-4">
                       <SocialLinks />
@@ -145,12 +126,11 @@ export function Footer() {
                 {footer_links.map((item, i) => (
                   <div
                     key={i}
-                    className={`${item.cls_1} pb-8 wow tpfadeUp`}
+                    className="col-xl-2 col-lg-2 col-md-3 pb-8 wow tpfadeUp"
                     data-wow-duration=".9s"
-                    data-wow-delay={item.delay}
                   >
-                    <div className={`tp-footer__widget ${item.cls_2}`}>
-                      <h4 className="tp-footer__widget-title font-bold mb-4 text-lg">
+                    <div className={`tp-footer__widget`}>
+                      <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
                         {item.title}
                       </h4>
                       <div className="tp-footer__content">
@@ -159,7 +139,7 @@ export function Footer() {
                             <li key={i}>
                               <Link
                                 href={link.link}
-                                className="text-muted-foreground hover:text-primary transition-colors"
+                                className="text-white/70 hover:text-white transition-colors"
                               >
                                 {link.name}
                               </Link>
@@ -172,34 +152,34 @@ export function Footer() {
                 ))}
 
                 <div
-                  className="col-xl-3 col-lg-3 col-md-6 pb-8 wow tpfadeUp"
+                  className="col-xl-4 col-lg-4 col-md-6 pb-8 wow tpfadeUp"
                   data-wow-duration=".9s"
                   data-wow-delay="1s"
                 >
                   <div className="tp-footer__widget footer-col-4">
-                    <h4 className="tp-footer__widget-title font-bold mb-4 text-lg">
+                    <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
                       Contact Us
                     </h4>
                     <div className="tp-footer__contact-info tp-footer__icon-space">
                       <ul className="space-y-3">
                         <li className="flex items-center gap-3">
                           <span className="text-primary">
-                            <PhoneIcon />
+                            <Phone className="h-5 w-5" />
                           </span>
                           <Link
                             href={`tel:${phone}`}
-                            className="text-muted-foreground hover:text-primary transition-colors"
+                            className="text-white/70 hover:text-white transition-colors"
                           >
                             {phone}
                           </Link>
                         </li>
                         <li className="flex items-center gap-3">
                            <span className="text-primary">
-                             <EmailIcon />
+                             <Mail className="h-5 w-5" />
                            </span>
                           <Link
                             href={`mailto:${contact_mail}`}
-                            className="text-muted-foreground hover:text-primary transition-colors"
+                            className="text-white/70 hover:text-white transition-colors"
                           >
                             {contact_mail}
                           </Link>
@@ -212,7 +192,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="tp-copyright__area pt-6 mt-6 border-t border-muted/20">
+         <div className="tp-copyright__area pt-6 mt-6">
             <div className="container">
               <div className="row align-items-center">
                 <div
