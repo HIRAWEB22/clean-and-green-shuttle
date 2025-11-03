@@ -85,10 +85,10 @@ export function Footer() {
   return (
     <footer className="bg-transparent text-foreground mt-auto">
       <div 
-        className="tp-footer-animation text-primary-foreground py-16"
+        className="tp-footer-animation text-primary-foreground"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
       >
-        <div className="container">
+        <div className="container py-8">
           <div className="pb-8 mb-8 border-b border-white/10">
             <div className="text-center wow tpfadeUp">
               <span className="text-2xl font-bold">{title}</span>
