@@ -78,11 +78,14 @@ export function Footer() {
           style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
         >
           <div className="pb-6 mb-6 border-b border-white/10">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
               <div className="wow tpfadeUp">
                 <div className="tp-footer__top-text">
                   <span className="text-2xl font-bold">{title}</span>
                 </div>
+              </div>
+              <div className="wow tpfadeUp md:text-right">
+                 <p className="text-white/70">{description}</p>
               </div>
             </div>
           </div>
