@@ -1,3 +1,4 @@
+
 "use client";
 
 import { gsap } from "gsap";
@@ -211,3 +212,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    
