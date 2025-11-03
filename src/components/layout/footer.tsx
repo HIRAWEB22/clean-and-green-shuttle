@@ -52,7 +52,7 @@ const { title, description, phone, contact_mail, copy_right, footer_links } =
 
 export function Footer() {
   return (
-    <footer className="bg-transparent text-foreground">
+    <footer>
       <div
         className="text-primary-foreground overflow-hidden"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
@@ -73,6 +73,7 @@ export function Footer() {
                     alt="Clean and Green Logo"
                     width={48}
                     height={48}
+                    className="h-12 w-12 rounded-full object-cover shadow-md border-2 border-primary/50"
                   />
                   <span className="text-lg font-bold text-white">Clean & Green</span>
                 </Link>
