@@ -76,10 +76,7 @@ export function Footer() {
         <div className="footer-black-bg tp-gsap-bg bg-card border-t" style={{
             backgroundColor: 'hsl(228, 44%, 7%)', 
             color: 'hsl(210, 40%, 98%)',
-            borderTopLeftRadius: '30px',
-            borderTopRightRadius: '30px',
-            borderBottomLeftRadius: '30px',
-            borderBottomRightRadius: '30px'
+            borderRadius: '30px'
         }}></div>
         <div className="tp-footer__area pt-20" style={{color: 'hsl(210, 40%, 98%)'}}>
           <div className="container">
