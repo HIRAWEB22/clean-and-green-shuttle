@@ -101,7 +101,7 @@ export function Footer() {
                     alt="Clean and Green Logo"
                     width={48}
                     height={48}
-                    className="rounded-full"
+                    className="rounded-full bg-transparent"
                   />
                   <span className="text-lg font-bold text-white">Clean & Green</span>
                 </Link>
