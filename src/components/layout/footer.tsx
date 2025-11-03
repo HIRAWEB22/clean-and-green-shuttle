@@ -71,7 +71,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-background text-foreground pb-8 pt-2">
+    <footer className="bg-background text-foreground">
       <div className="container">
         <div 
           className="tp-gsap-bg rounded-lg text-primary-foreground p-8"
