@@ -58,28 +58,31 @@ export function Footer() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".tp-footer-animation",
-        start: "top bottom",
-        end: "bottom bottom",
-        scrub: 1,
+        start: "top bottom-=200",
+        toggleActions: "play none none none", // play animation once and don't reverse
       },
     });
 
     tl.from(".tp-footer-animation .footer-col-1", {
       opacity: 0,
       y: 50,
+      duration: 1,
     })
       .from(".tp-footer-animation .footer-col-2", {
         opacity: 0,
         y: 60,
-      }, "-=0.2")
+        duration: 1,
+      }, "-=0.8")
       .from(".tp-footer-animation .footer-col-3", {
         opacity: 0,
         y: 70,
-      }, "-=0.3")
+        duration: 1,
+      }, "-=0.8")
       .from(".tp-footer-animation .footer-col-4", {
         opacity: 0,
         y: 80,
-      }, "-=0.4");
+        duration: 1,
+      }, "-=0.8");
   }, []);
 
   return (
