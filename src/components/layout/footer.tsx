@@ -86,7 +86,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-transparent text-foreground mt-auto">
+    <footer className="bg-transparent text-foreground">
       <div 
         className="tp-footer-animation text-primary-foreground"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
