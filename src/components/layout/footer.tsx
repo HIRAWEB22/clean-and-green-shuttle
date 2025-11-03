@@ -72,11 +72,11 @@ export function Footer() {
 
   return (
     <footer className="bg-background text-foreground">
-      <div className="container">
-        <div 
-          className="tp-gsap-bg rounded-lg text-primary-foreground p-8"
-          style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
-        >
+      <div 
+        className="tp-gsap-bg rounded-lg text-primary-foreground p-8"
+        style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
+      >
+        <div className="container">
           <div className="pb-6 mb-6 border-b border-white/10">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
               <div className="wow tpfadeUp">
@@ -90,7 +90,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div
               className="wow tpfadeUp"
             >
