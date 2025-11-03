@@ -1,3 +1,4 @@
+
 "use client";
 
 import { gsap } from "gsap";
@@ -61,7 +62,7 @@ export function Footer() {
           start: "top bottom",
           end: "bottom bottom",
         },
-        scaleX: 0.95,
+        scaleX: 1,
         transformOrigin: "center center",
         ease: "none",
       });
@@ -83,7 +84,7 @@ export function Footer() {
                 </div>
               </div>
               <div className="wow tpfadeUp md:text-right">
-                 <p className="text-white/70">{description}</p>
+                 
               </div>
             </div>
           </div>
