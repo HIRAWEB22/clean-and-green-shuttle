@@ -6,6 +6,7 @@ import Image from "next/image";
 import React from "react";
 import SocialLinks from "@/components/social-links";
 import { Mail, Phone } from "lucide-react";
+import { AnimatedSection } from "@/components/home/animated-section";
 
 // footer_content
 const footer_content = {
@@ -53,18 +54,18 @@ export function Footer() {
   return (
     <footer className="bg-transparent text-foreground">
       <div
-        className="text-primary-foreground"
+        className="text-primary-foreground overflow-hidden"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
       >
-        <div className="container py-8">
-          <div className="pb-4 mb-8 border-b border-white/10">
-            <div className="text-center">
+        <div className="py-8">
+          <div className="pb-4 mb-4 border-b border-white/10">
+            <div className="container text-center">
               <span className="text-2xl font-bold">{title}</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
+          <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <AnimatedSection as="div">
               <div className="tp-footer__widget">
                 <Link href="/" className="tp-footer__widget-logo mb-4 flex items-center gap-2">
                   <Image
@@ -82,11 +83,13 @@ export function Footer() {
                   <SocialLinks />
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
 
             {footer_links.map((item, i) => (
-              <div
+              <AnimatedSection
+                as="div"
                 key={item.id}
+                style={{animationDelay: `${i * 0.15}s`}}
               >
                 <div className={`tp-footer__widget`}>
                   <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
@@ -107,10 +110,10 @@ export function Footer() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
 
-            <div>
+            <AnimatedSection as="div" style={{animationDelay: `0.3s`}}>
               <div className="tp-footer__widget">
                 <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
                   Contact Us
@@ -142,11 +145,11 @@ export function Footer() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
 
           <div className="pt-6 mt-6 border-t border-white/10">
-            <div className="grid grid-cols-1">
+            <div className="container grid grid-cols-1">
               <div
                 className="col-md-12 text-center"
               >
