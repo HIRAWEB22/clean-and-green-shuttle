@@ -2,6 +2,7 @@
 "use client";
 
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -50,49 +51,55 @@ const footer_content = {
 const { title, description, phone, contact_mail, copy_right, footer_links } =
   footer_content;
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function Footer() {
   useIsomorphicLayoutEffect(() => {
-    gsap.set(".tp-gsap-bg", { scaleX: 1 });
-    let mm = gsap.matchMedia();
-    mm.add("(min-width:1400px)", () => {
-      gsap.to(".tp-gsap-bg", {
-        scrollTrigger: {
-          trigger: ".tp-gsap-bg",
-          scrub: 0.02,
-          start: "top bottom",
-          end: "bottom bottom",
-        },
-        scaleX: 1,
-        transformOrigin: "center center",
-        ease: "none",
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".tp-footer-animation",
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: 1,
+      },
     });
+
+    tl.from(".tp-footer-animation .footer-col-1", {
+      opacity: 0,
+      y: 50,
+    })
+      .from(".tp-footer-animation .footer-col-2", {
+        opacity: 0,
+        y: 60,
+      }, "-=0.2")
+      .from(".tp-footer-animation .footer-col-3", {
+        opacity: 0,
+        y: 70,
+      }, "-=0.3")
+      .from(".tp-footer-animation .footer-col-4", {
+        opacity: 0,
+        y: 80,
+      }, "-=0.4");
   }, []);
 
   return (
-    <footer className="bg-background text-foreground">
+    <footer className="bg-transparent text-foreground mt-auto">
       <div 
-        className="tp-gsap-bg text-primary-foreground py-16"
+        className="tp-footer-animation text-primary-foreground py-16"
         style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
       >
         <div className="container">
           <div className="pb-8 mb-8 border-b border-white/10">
-            <div className="grid grid-cols-1 items-center gap-4">
-              <div className="wow tpfadeUp">
-                <div className="tp-footer__top-text text-center">
-                  <span className="text-2xl font-bold">{title}</span>
-                </div>
-              </div>
+            <div className="text-center wow tpfadeUp">
+              <span className="text-2xl font-bold">{title}</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div
-              className="wow tpfadeUp"
-            >
-              <div className="tp-footer__widget footer-col-1">
+            <div className="footer-col-1">
+              <div className="tp-footer__widget">
                 <Link href="/" className="tp-footer__widget-logo mb-4 flex items-center gap-2">
-                   <Image
+                  <Image
                     src="/logos/main-logo.png"
                     alt="Clean and Green Logo"
                     width={48}
@@ -109,10 +116,10 @@ export function Footer() {
               </div>
             </div>
 
-            {footer_links.map((item) => (
+            {footer_links.map((item, i) => (
               <div
                 key={item.id}
-                className="wow tpfadeUp"
+                className={`footer-col-${i + 2}`}
               >
                 <div className={`tp-footer__widget`}>
                   <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
@@ -136,10 +143,8 @@ export function Footer() {
               </div>
             ))}
 
-            <div
-              className="wow tpfadeUp"
-            >
-              <div className="tp-footer__widget footer-col-4">
+            <div className="footer-col-4">
+              <div className="tp-footer__widget">
                 <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
                   Contact Us
                 </h4>
