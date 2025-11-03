@@ -78,8 +78,8 @@ export function Footer() {
           style={{ backgroundColor: 'hsl(228, 44%, 7%)' }}
         >
           <div className="pb-6 mb-6 border-b border-white/10">
-            <div className="row align-items-center">
-              <div className="col-md-12 wow tpfadeUp">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+              <div className="wow tpfadeUp">
                 <div className="tp-footer__top-text">
                   <span className="text-2xl font-bold">{title}</span>
                 </div>
@@ -87,9 +87,9 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="row">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
-              className="col-xl-4 col-lg-4 col-md-6 pb-8 wow tpfadeUp"
+              className="wow tpfadeUp"
             >
               <div className="tp-footer__widget footer-col-1">
                 <Link href="/" className="tp-footer__widget-logo mb-4 flex items-center gap-2">
@@ -111,10 +111,10 @@ export function Footer() {
               </div>
             </div>
 
-            {footer_links.map((item, i) => (
+            {footer_links.map((item) => (
               <div
-                key={i}
-                className="col-xl-2 col-lg-2 col-md-3 pb-8 wow tpfadeUp"
+                key={item.id}
+                className="wow tpfadeUp"
               >
                 <div className={`tp-footer__widget`}>
                   <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
@@ -139,7 +139,7 @@ export function Footer() {
             ))}
 
             <div
-              className="col-xl-4 col-lg-4 col-md-6 pb-8 wow tpfadeUp"
+              className="wow tpfadeUp"
             >
               <div className="tp-footer__widget footer-col-4">
                 <h4 className="tp-footer__widget-title font-bold mb-4 text-lg text-white">
@@ -176,7 +176,7 @@ export function Footer() {
           </div>
 
           <div className="pt-6 mt-6 border-t border-white/10">
-            <div className="row align-items-center">
+            <div className="grid grid-cols-1">
               <div
                 className="col-md-12 wow tpfadeUp text-center"
               >
