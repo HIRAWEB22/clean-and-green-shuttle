@@ -11,7 +11,7 @@ import {
   PanelLeft,
   Menu,
   BookUser,
-  Dog,
+  Info,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -25,7 +25,8 @@ const navLinks = [
   { href: "/", label: "Home", icon: Home },
   { href: "/track", label: "Track", icon: Map },
   { href: "/sustainability", label: "Sustainability", icon: Leaf },
-  { href: "/about", label: "About", icon: BookUser },
+  { href: "/about", label: "About", icon: Info },
+  { href: "/analysis", label: "Analysis", icon: BookUser },
   { href: "/safety", label: "Safety", icon: Shield },
   { href: "/feedback", label: "Feedback", icon: MessageSquare },
 ];
@@ -111,3 +112,5 @@ export function Header() {
     </header>
   );
 }
+
+    
