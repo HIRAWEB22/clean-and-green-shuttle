@@ -29,6 +29,9 @@ const fleet = [
     description:
       'Our primary shuttle connecting all major academic buildings, libraries, and student centers.',
     href: '/fleet/campus-loop',
+    imageSrc: '/images/image copy 2.png',
+    imageAlt: 'Main Campus Loop shuttle',
+    imageHint: 'electric shuttle',
     features: [
       'High-frequency service',
       'Connects all major buildings',
@@ -40,6 +43,9 @@ const fleet = [
     description:
       'Serving the local community by connecting key areas of Islamabad with our campus.',
     href: '/fleet/city-connect',
+    imageSrc: '/images/image copy 3.png',
+    imageAlt: 'Islamabad City Connect shuttle',
+    imageHint: 'electric bus city',
     features: [
       'Connects campus to BRT stations',
       'Affordable fares for all',
@@ -122,6 +128,15 @@ export default function Home() {
                 key={shuttle.name}
                 className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
+                <div className="relative h-56 overflow-hidden">
+                    <Image
+                        src={shuttle.imageSrc}
+                        alt={shuttle.imageAlt}
+                        data-ai-hint={shuttle.imageHint}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
                 <CardHeader>
                   <CardTitle className="text-2xl">{shuttle.name}</CardTitle>
                   <CardDescription>{shuttle.description}</CardDescription>
