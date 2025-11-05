@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import { ShieldCheck, UserCheck, Video, Wrench, Accessibility, Volume2 } from 'lucide-react';
+import { ShieldCheck, UserCheck, Video, Wrench, Accessibility, Volume2, Dog } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
 
@@ -20,6 +20,11 @@ const safetyFeatures = [
         title: 'Regular Vehicle Maintenance',
         description: 'Our shuttles undergo daily inspections and scheduled preventative maintenance to meet the highest safety standards and ensure vehicle reliability.',
     },
+    {
+        icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+        title: 'Health & Hygiene',
+        description: 'Enhanced cleaning and sanitation protocols are in effect on all shuttles to ensure a healthy and comfortable environment for our passengers.',
+    },
 ];
 
 const accessibilityFeatures = [
@@ -34,9 +39,9 @@ const accessibilityFeatures = [
         description: 'To assist visually impaired passengers, our shuttles feature an automated system that announces upcoming stops clearly.',
     },
     {
-        icon: <ShieldCheck className="h-10 w-10 text-primary" />,
-        title: 'Priority Seating',
-        description: 'Designated priority seating is available near the doors for seniors, pregnant women, and passengers with mobility challenges.',
+        icon: <Dog className="h-10 w-10 text-primary" />,
+        title: 'Service Animals Welcome',
+        description: 'Certified service animals are welcome on all our shuttles, ensuring that everyone can travel with the assistance they need.',
     },
 ];
 
@@ -65,12 +70,12 @@ export default function SafetyPage() {
       </AnimatedSection>
       
       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
-        <div className="container text-center max-w-5xl">
+        <div className="container text-center max-w-6xl">
             <h2 className="text-3xl font-bold tracking-tight">Our Commitment to Safety</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
                 We implement a multi-layered safety protocol to ensure peace of mind on every journey. From our drivers to our vehicles, every aspect is held to the highest standard.
             </p>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
                 {safetyFeatures.map(item => (
                     <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                         <CardHeader className="items-center">
