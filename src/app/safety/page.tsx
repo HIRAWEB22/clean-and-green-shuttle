@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import { ShieldCheck, UserCheck, Video, Wrench, Accessibility, Volume2, Dog } from 'lucide-react';
+import { ShieldCheck, UserCheck, Video, Wrench, Accessibility, Volume2, Dog, HeartPulse, Megaphone, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
 
@@ -44,6 +44,38 @@ const accessibilityFeatures = [
         description: 'Certified service animals are welcome on all our shuttles, ensuring that everyone can travel with the assistance they need.',
     },
 ];
+
+const codeOfConduct = [
+    {
+        icon: <HeartPulse className="h-8 w-8 text-primary" />,
+        title: 'Be Respectful',
+        description: 'Treat fellow passengers and drivers with courtesy. Offensive language or behavior will not be tolerated.',
+    },
+    {
+        icon: <Megaphone className="h-8 w-8 text-primary" />,
+        title: 'Use Headphones',
+        description: 'Please use headphones for music or phone calls to maintain a peaceful environment for everyone.',
+    },
+    {
+        icon: <FileText className="h-8 w-8 text-primary" />,
+        title: 'Keep It Clean',
+        description: 'Please take your trash with you and help us keep the shuttles clean for the next rider.',
+    },
+];
+
+const emergencyProcedures = [
+    {
+        icon: <AlertTriangle className="h-8 w-8 text-destructive" />,
+        title: 'In Case of Emergency',
+        description: 'Follow the driver\'s instructions. Emergency exits are clearly marked. Each shuttle is equipped with a first-aid kit and a fire extinguisher.',
+    },
+    {
+        icon: <Wrench className="h-8 w-8 text-destructive" />,
+        title: 'Vehicle Breakdown',
+        description: 'If a shuttle experiences a mechanical issue, a replacement vehicle will be dispatched immediately to the location to continue the route with minimal delay.',
+    },
+];
+
 
 export default function SafetyPage() {
   return (
@@ -107,6 +139,50 @@ export default function SafetyPage() {
                                 {item.icon}
                             </div>
                             <CardTitle className="mt-4 text-xl">{item.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </div>
+      </AnimatedSection>
+      
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
+        <div className="container text-center max-w-5xl">
+            <h2 className="text-3xl font-bold tracking-tight">Rider Code of Conduct</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                To ensure a safe and pleasant journey for all, we ask our riders to follow a few simple guidelines.
+            </p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                {codeOfConduct.map(item => (
+                    <Card key={item.title} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <CardHeader className="flex flex-row items-center gap-4">
+                            {item.icon}
+                            <CardTitle className="text-xl">{item.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
+        <div className="container text-center max-w-5xl">
+            <h2 className="text-3xl font-bold tracking-tight">Emergency Procedures</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                We are prepared for the unexpected. Our drivers are trained to handle emergencies, and our shuttles are equipped with safety features.
+            </p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                {emergencyProcedures.map(item => (
+                    <Card key={item.title} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-destructive/20">
+                        <CardHeader className="flex flex-row items-center gap-4">
+                            {item.icon}
+                            <CardTitle className="text-xl text-destructive">{item.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <p className="text-muted-foreground">{item.description}</p>
