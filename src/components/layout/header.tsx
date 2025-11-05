@@ -25,6 +25,7 @@ const navLinks = [
   { href: "/track", label: "Track", icon: Map },
   { href: "/sustainability", label: "Sustainability", icon: Leaf },
   { href: "/about", label: "About", icon: BookUser },
+  { href: "/safety", label: "Safety", icon: Shield },
   { href: "/feedback", label: "Feedback", icon: MessageSquare },
 ];
 
