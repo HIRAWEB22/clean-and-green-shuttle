@@ -334,7 +334,7 @@ export default function AboutPage() {
                  <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
                         <Image
-                            src="https://images.unsplash.com/photo-1617025894987-5d4668b4d8e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            src="/images/bus.png"
                             alt="Financial chart showing growth"
                             data-ai-hint="market growth chart"
                             fill
@@ -354,7 +354,7 @@ export default function AboutPage() {
                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
                         <Image
-                            src="https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                            src="/images/image copy 5.png"
                             alt="A solar-powered electric shuttle"
                             data-ai-hint="solar shuttle"
                             fill
