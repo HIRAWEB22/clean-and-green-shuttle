@@ -13,8 +13,8 @@ const footer_content = {
   title: "Ride Green. Ride Smart. The future of campus mobility.",
   description:
     "Our team is dedicated to providing a seamless, reliable, and sustainable transportation solution for the campus community.",
-  phone: "+1 (234) 567-890",
-  contact_mail: "support@cleanandgreen.edu",
+  phone: "+923238558754",
+  contact_mail: "abdullahnumlian45@gmail.com",
 
   copy_right: (
     <>
