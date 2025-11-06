@@ -75,29 +75,11 @@ export default function DetailsPage() {
             <p className="text-muted-foreground mb-4">
                 The "Clean and Green Shuttle Service" offers a solution to all these challenges through a full electric utility-grade golf cart fleet. The success of this project will be measured under the Triple Bottom Line (TBL) framework, which comprises three key, interrelated dimensions:
             </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-4">
-                <Card className="text-center bg-blue-50 dark:bg-blue-900/20">
-                    <CardHeader className="items-center">
-                        <Users className="h-10 w-10 text-blue-500"/>
-                        <CardTitle>People (Well-being)</CardTitle>
-                    </CardHeader>
-                    <CardContent><p>Significant enhancement of student well-being and access.</p></CardContent>
-                </Card>
-                 <Card className="text-center bg-green-50 dark:bg-green-900/20">
-                    <CardHeader className="items-center">
-                        <Globe className="h-10 w-10 text-green-500"/>
-                        <CardTitle>Planet (Sustainability)</CardTitle>
-                    </CardHeader>
-                    <CardContent><p>Measurable contribution to UN SDGs (7, 9, 11, 13).</p></CardContent>
-                </Card>
-                 <Card className="text-center bg-yellow-50 dark:bg-yellow-900/20">
-                    <CardHeader className="items-center">
-                        <DollarSign className="h-10 w-10 text-yellow-500"/>
-                        <CardTitle>Profit (Financial Stability)</CardTitle>
-                    </CardHeader>
-                    <CardContent><p>Creation of a reliable, scalable revenue stream.</p></CardContent>
-                </Card>
-            </div>
+            <ol className="list-decimal list-inside space-y-2 text-muted-foreground mb-4">
+                <li><span className="font-semibold text-foreground">People (Well-being):</span> Significant enhancement of student well-being and access.</li>
+                <li><span className="font-semibold text-foreground">Planet (Sustainability):</span> Measurable contribution to the United Nations Sustainable Development Goals (SDGs 7, 9, 11, 13).</li>
+                <li><span className="font-semibold text-foreground">Profit (Financial Stability):</span> Creation of a reliable, scalable revenue stream and reduction in operating expenses.</li>
+            </ol>
             <p className="text-muted-foreground">
                 This project is viewed as a strategic asset that reduces long-term costs. Traditional fuel-based transport is a volatile cost center with high operating expenses (OPEX). In contrast, the LSV infrastructure, combined with government incentives (low duty and reduced electricity tariffs), becomes a long-term, subsidized asset that aligns with the University's Environmental, Social, and Governance (ESG) objectives. This positioning improves the project's ability to attract external funding (such as UN Sustainable Development funds or specific HEC grants).
             </p>
@@ -270,20 +252,20 @@ export default function DetailsPage() {
         <AnimatedSection as="div" className="mb-12">
             <h2 className="text-3xl font-bold mb-4">6. Strategic Recommendations, Risk Analysis, and Implementation Roadmap</h2>
             <h3 className="text-2xl font-bold text-primary mt-6 mb-3">6.2. Phased Implementation and Scalability (Roadmap)</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-                <Card className="border-primary">
-                    <CardHeader><FileText className="h-8 w-8 text-primary mb-2" /><CardTitle>Phase I: Pilot Program (12 Months)</CardTitle></CardHeader>
-                    <CardContent><p>Deploy 4 LSVs on high-demand routes, establishing baseline metrics for cost, utilization, and student satisfaction.</p></CardContent>
-                </Card>
-                <Card>
-                    <CardHeader><Globe className="h-8 w-8 text-accent mb-2" /><CardTitle>Phase II: Expansion (Years 2-3)</CardTitle></CardHeader>
-                    <CardContent><p>Scale the fleet, implement a full multi-level revenue model, and research solar integration.</p></CardContent>
-                </Card>
-                <Card>
-                    <CardHeader><CheckCircle className="h-8 w-8 text-green-500 mb-2" /><CardTitle>Phase III: Sustainable Integration (Year 4+)</CardTitle></CardHeader>
-                    <CardContent><p>Achieve financial self-sufficiency and explore local manufacturing partnerships.</p></CardContent>
-                </Card>
-            </div>
+            <ul className="list-disc list-inside space-y-4 text-muted-foreground">
+                <li>
+                    <h4 className="font-bold text-lg text-foreground">Phase I: Pilot Program (12 Months)</h4>
+                    <p>Deploy 4 LSVs on high-demand routes, establishing baseline metrics for cost, utilization, and student satisfaction.</p>
+                </li>
+                <li>
+                    <h4 className="font-bold text-lg text-foreground">Phase II: Expansion (Years 2-3)</h4>
+                    <p>Scale the fleet, implement a full multi-level revenue model, and research solar integration.</p>
+                </li>
+                 <li>
+                    <h4 className="font-bold text-lg text-foreground">Phase III: Sustainable Integration (Year 4+)</h4>
+                    <p>Achieve financial self-sufficiency and explore local manufacturing partnerships.</p>
+                </li>
+            </ul>
         </AnimatedSection>
         
         <AnimatedSection as="div">
