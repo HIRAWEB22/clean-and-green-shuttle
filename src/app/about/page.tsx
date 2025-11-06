@@ -385,7 +385,7 @@ export default function AboutPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container text-center relative">
             <h2 className="text-3xl font-bold tracking-tight text-white">Interested in the Data?</h2>
             <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
