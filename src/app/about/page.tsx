@@ -334,7 +334,7 @@ export default function AboutPage() {
                  <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
                         <Image
-                            src="/images/bus.png"
+                            src="/images/image copy 6.png"
                             alt="Financial chart showing growth"
                             data-ai-hint="market growth chart"
                             fill
@@ -354,7 +354,7 @@ export default function AboutPage() {
                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
                     <div className="relative h-48 w-full">
                         <Image
-                            src="/images/image copy 5.png"
+                            src="/images/image copy 7.png"
                             alt="A solar-powered electric shuttle"
                             data-ai-hint="solar shuttle"
                             fill
@@ -399,3 +399,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+    
