@@ -2,40 +2,12 @@
 import Image from 'next/image';
 import {
   Globe,
-  DollarSign,
-  Accessibility,
-  Shield,
-  Coins,
-  CheckCircle,
-  BarChart2,
   Users,
-  Info,
   Lightbulb,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
 import Link from 'next/link';
-
-const challenges = [
-  {
-    icon: <Coins className="h-10 w-10 text-destructive" />,
-    title: 'Socio-Economic Burden',
-    description:
-      'High travel costs create a financial burden on students, limiting their campus activities and participation in university life.',
-  },
-  {
-    icon: <Shield className="h-10 w-10 text-primary" />,
-    title: 'Safety & Public Health',
-    description:
-      'Reliance on external public transport poses health risks and safety concerns, especially with poor sanitation and overcrowding.',
-  },
-  {
-    icon: <Accessibility className="h-10 w-10 text-accent" />,
-    title: 'The Last-Mile Gap',
-    description:
-      'The distance between public transit stations and central campus facilities hinders timely and equitable access for many students.',
-  },
-];
 
 
 export default function AboutPage() {
@@ -62,30 +34,6 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
       
-      <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
-        <div className="container text-center max-w-5xl">
-            <h2 className="text-3xl font-bold tracking-tight animate-fade-in-down">Addressing Systemic Deficiencies in Campus Mobility</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-down [animation-delay:0.3s]">
-                Our campus community faces key transportation issues that impact operational efficiency and compromise student well-being.
-            </p>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                {challenges.map(item => (
-                    <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <CardHeader className="items-center">
-                            <div className="p-4 bg-secondary rounded-full">
-                                {item.icon}
-                            </div>
-                            <CardTitle className="mt-4 text-xl">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </div>
-      </AnimatedSection>
-
       <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -153,5 +101,3 @@ export default function AboutPage() {
     </>
   );
 }
-
-    
