@@ -240,8 +240,8 @@ export default function AboutPage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <CardHeader className="items-center">
-                <div className="p-4 bg-secondary rounded-full">
-                  <Users className="h-10 w-10 text-primary" />
+                <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                  <Users className="h-10 w-10 text-blue-500" />
                 </div>
                 <CardTitle className="mt-4 text-xl">People (Well-being)</CardTitle>
               </CardHeader>
@@ -251,8 +251,8 @@ export default function AboutPage() {
             </Card>
             <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <CardHeader className="items-center">
-                <div className="p-4 bg-secondary rounded-full">
-                  <Globe className="h-10 w-10 text-primary" />
+                <div className="p-4 bg-green-100 dark:bg-green-900/30 rounded-full">
+                  <Globe className="h-10 w-10 text-green-500" />
                 </div>
                 <CardTitle className="mt-4 text-xl">Planet (Sustainability)</CardTitle>
               </CardHeader>
@@ -262,8 +262,8 @@ export default function AboutPage() {
             </Card>
             <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <CardHeader className="items-center">
-                <div className="p-4 bg-secondary rounded-full">
-                  <DollarSign className="h-10 w-10 text-primary" />
+                <div className="p-4 bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+                  <DollarSign className="h-10 w-10 text-yellow-500" />
                 </div>
                 <CardTitle className="mt-4 text-xl">Profit (Financial Stability)</CardTitle>
               </CardHeader>
