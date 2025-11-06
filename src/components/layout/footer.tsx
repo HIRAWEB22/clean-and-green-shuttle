@@ -40,6 +40,8 @@ const footer_content = {
         { name: "About", link: "/about" },
         { name: "Track", link: "/track" },
         { name: "Sustainability", link: "/sustainability" },
+        { name: "Analysis", link: "/analysis" },
+        { name: "Details", link: "/details" },
         { name: "Feedback", link: "/feedback" },
         { name: "Admin", link: "/admin" },
       ],
@@ -165,3 +167,4 @@ export function Footer() {
     </footer>
   );
 }
+

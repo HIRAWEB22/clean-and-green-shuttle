@@ -389,7 +389,7 @@ export default function AboutPage() {
           </div>
            <div className="mt-12 text-center">
             <Button asChild size="lg" className="group">
-              <Link href="/analysis">
+              <Link href="/details">
                 View More Details
                 <MoveRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
@@ -406,7 +406,7 @@ export default function AboutPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="container text-center relative">
             <h2 className="text-3xl font-bold tracking-tight text-white">Interested in the Data?</h2>
             <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">

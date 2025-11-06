@@ -12,6 +12,7 @@ import {
   Menu,
   BookUser,
   Info,
+  FileText,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -27,6 +28,7 @@ const navLinks = [
   { href: "/sustainability", label: "Sustainability", icon: Leaf },
   { href: "/about", label: "About", icon: Info },
   { href: "/analysis", label: "Analysis", icon: BookUser },
+  { href: "/details", label: "Details", icon: FileText },
   { href: "/safety", label: "Safety", icon: Shield },
   { href: "/feedback", label: "Feedback", icon: MessageSquare },
 ];
