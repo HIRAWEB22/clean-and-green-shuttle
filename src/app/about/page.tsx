@@ -108,7 +108,7 @@ export default function AboutPage() {
                 </div>
                  <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib.rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Our Team"
                         data-ai-hint="diverse team meeting"
                         fill
@@ -284,8 +284,8 @@ export default function AboutPage() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-background rounded-full">
-                            <FileCheck className="h-10 w-10 text-primary" />
+                        <div className="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                            <FileCheck className="h-10 w-10 text-blue-500" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase I: Pilot Program</CardTitle>
                     </CardHeader>
@@ -295,8 +295,8 @@ export default function AboutPage() {
                 </Card>
                  <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-background rounded-full">
-                            <Scaling className="h-10 w-10 text-primary" />
+                        <div className="p-4 bg-green-100 dark:bg-green-900/30 rounded-full">
+                            <Scaling className="h-10 w-10 text-green-500" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase II: Expansion</CardTitle>
                     </CardHeader>
@@ -306,8 +306,8 @@ export default function AboutPage() {
                 </Card>
                  <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-background rounded-full">
-                            <RefreshCw className="h-10 w-10 text-primary" />
+                        <div className="p-4 bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+                            <RefreshCw className="h-10 w-10 text-yellow-500" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase III: Integration</CardTitle>
                     </CardHeader>
