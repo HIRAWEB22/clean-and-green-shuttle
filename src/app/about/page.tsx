@@ -26,11 +26,12 @@ import {
   Bar,
   BarChart as RechartsBarChart,
   CartesianGrid,
+  Legend,
   ResponsiveContainer,
   XAxis,
   YAxis,
 } from "recharts";
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+import { ChartConfig, ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
 const chartData = [
   { type: "CO₂ Emissions (g/km)", fuel: 147, electric: 0 },
@@ -208,7 +209,7 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                 <ChartContainer config={chartConfig} className="h-[300px] w-full">
-                    <RechartsBarChart data={chartData} layout="vertical" margin={{ left: 20 }}>
+                  <RechartsBarChart accessibilityLayer data={chartData} layout="vertical" margin={{ left: 20 }}>
                     <CartesianGrid horizontal={false} />
                     <YAxis
                         dataKey="type"
@@ -220,9 +221,11 @@ export default function AboutPage() {
                         className="text-sm text-muted-foreground"
                     />
                     <XAxis type="number" hide />
-                    <RechartsBarChart dataKey="fuel" fill="var(--color-fuel)" radius={4} />
-                    <RechartsBarChart dataKey="electric" fill="var(--color-electric)" radius={4} />
-                    </RechartsBarChart>
+                    <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                    <Legend content={<ChartLegendContent />} />
+                    <Bar dataKey="fuel" fill="var(--color-fuel)" radius={4} />
+                    <Bar dataKey="electric" fill="var(--color-electric)" radius={4} />
+                  </RechartsBarChart>
                 </ChartContainer>
                 </CardContent>
             </Card>
