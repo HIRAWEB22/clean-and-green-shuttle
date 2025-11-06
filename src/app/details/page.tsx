@@ -197,14 +197,27 @@ export default function DetailsPage() {
 
         <AnimatedSection as="div" className="mb-12">
             <h3 className="text-2xl font-bold text-primary mt-6 mb-3">3.3. Revenue Generation and Financial Stability</h3>
-            <p className="text-muted-foreground mb-4">The project should not only be a subsidized operation but also generate a sustainable revenue stream (Profit TBL).</p>
-            <h4 className="text-xl font-bold mb-2">Multi-Level Revenue Model:</h4>
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
-                <li><span className="font-semibold text-foreground">Fixed Semester Pass (Subscription Model):</span> A premium, predictable subscription model targeting long-term students.</li>
-                <li><span className="font-semibold text-foreground">Tiered Pay-per-Ride System (Transactional Model):</span> A flexible system for visitors or infrequent users.</li>
-                <li><span className="font-semibold text-foreground">Advertising and Sponsorship:</span> Utilizing LSVs for on-campus and external corporate advertising.</li>
-                <li><span className="font-semibold text-foreground">Carbon Credit Revenue:</span> Leveraging CO2 reduction for a measurable carbon asset.</li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p className="text-muted-foreground mb-4">The project should not only be a subsidized operation but also generate a sustainable revenue stream (Profit TBL).</p>
+                    <h4 className="text-xl font-bold mb-2">Multi-Level Revenue Model:</h4>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
+                        <li><span className="font-semibold text-foreground">Fixed Semester Pass (Subscription Model):</span> A premium, predictable subscription model targeting long-term students.</li>
+                        <li><span className="font-semibold text-foreground">Tiered Pay-per-Ride System (Transactional Model):</span> A flexible system for visitors or infrequent users.</li>
+                        <li><span className="font-semibold text-foreground">Advertising and Sponsorship:</span> Utilizing LSVs for on-campus and external corporate advertising.</li>
+                        <li><span className="font-semibold text-foreground">Carbon Credit Revenue:</span> Leveraging CO2 reduction for a measurable carbon asset.</li>
+                    </ul>
+                </div>
+                <div className="relative h-64 w-full rounded-xl overflow-hidden shadow-lg group">
+                    <Image
+                      src="/images/image copy 6.png"
+                      alt="Financial chart showing growth"
+                      data-ai-hint="market growth chart"
+                      fill
+                      className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
+            </div>
         </AnimatedSection>
 
         <AnimatedSection as="div" className="mb-12">
