@@ -50,9 +50,9 @@ export default function AboutPage() {
     <>
       <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1593349028458-09da355f3557?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="A winding road through a lush green landscape, symbolizing a sustainable journey."
-          data-ai-hint="sustainable journey road"
+          src="/images/image8.png"
+          alt="A hand holding a miniature sustainable city with wind turbines and solar panels."
+          data-ai-hint="sustainable city"
           fill
           className="object-cover"
           priority
