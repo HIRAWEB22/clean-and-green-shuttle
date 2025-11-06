@@ -339,7 +339,7 @@ export default function AboutPage() {
                             data-ai-hint="market growth chart"
                             width={600}
                             height={400}
-                            className="object-cover w-full h-full"
+                            className="object-contain w-full h-full"
                         />
                     </div>
                     <CardHeader>
