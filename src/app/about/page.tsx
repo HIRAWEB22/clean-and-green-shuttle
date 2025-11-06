@@ -331,15 +331,15 @@ export default function AboutPage() {
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
-                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
-                    <div className="relative h-48 w-full">
+                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col group">
+                    <div className="relative h-48 w-full overflow-hidden">
                         <Image
                             src="/images/image copy 6.png"
                             alt="Financial chart showing growth"
                             data-ai-hint="market growth chart"
                             width={600}
                             height={400}
-                            className="object-contain w-full h-full"
+                            className="object-contain w-full h-full transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                     <CardHeader>
@@ -352,7 +352,7 @@ export default function AboutPage() {
                         <p className="text-muted-foreground">The electric golf cart industry is projected to grow at a CAGR of 8.03% from 2025 to 2034, with the fastest growth in the Asia-Pacific region.</p>
                     </CardContent>
                 </Card>
-                <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
+                <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col group">
                     <div className="relative h-48 w-full">
                         <Image
                             src="/images/image copy 7.png"
@@ -360,7 +360,7 @@ export default function AboutPage() {
                             data-ai-hint="solar shuttle"
                             width={600}
                             height={400}
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                     <CardHeader>
