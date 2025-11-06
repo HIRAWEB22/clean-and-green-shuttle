@@ -337,31 +337,6 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
             <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col group">
-              <div className="relative h-48 w-full">
-                <Image
-                  src="/images/image copy 7.png"
-                  alt="A solar-powered electric shuttle"
-                  data-ai-hint="solar shuttle"
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <CheckCircle className="h-8 w-8 text-green-500" />
-                  <CardTitle>Proven Pakistani Model</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground">
-                  The Aga Khan University Hospital in Karachi successfully
-                  implemented a solar-cum-electric shuttle service in 2013,
-                  saving 7.1 tons of CO2 annually.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col group">
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src="/images/image copy 6.png"
@@ -383,6 +358,31 @@ export default function AboutPage() {
                   The electric golf cart industry is projected to grow at a CAGR
                   of 8.03% from 2025 to 2034, with the fastest growth in the
                   Asia-Pacific region.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col group">
+              <div className="relative h-48 w-full">
+                <Image
+                  src="/images/image copy 7.png"
+                  alt="A solar-powered electric shuttle"
+                  data-ai-hint="solar shuttle"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-4">
+                  <CheckCircle className="h-8 w-8 text-green-500" />
+                  <CardTitle>Proven Pakistani Model</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">
+                  The Aga Khan University Hospital in Karachi successfully
+                  implemented a solar-cum-electric shuttle service in 2013,
+                  saving 7.1 tons of CO2 annually.
                 </p>
               </CardContent>
             </Card>
