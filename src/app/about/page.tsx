@@ -377,7 +377,7 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection as="section" className="relative py-16 md:py-24 bg-secondary">
+      <AnimatedSection as="section" className="relative py-16 md:py-24">
          <Image
           src="/images/image8.png"
           alt="Abstract pattern of green and yellow lines"
