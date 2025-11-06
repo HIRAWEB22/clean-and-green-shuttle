@@ -11,6 +11,8 @@ import {
   Scaling,
   RefreshCw,
   DollarSign,
+  BarChart2,
+  CheckCircle,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
@@ -183,6 +185,41 @@ export default function AboutPage() {
       </AnimatedSection>
 
       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
+        <div className="container">
+            <div className="text-center mb-12">
+                 <h2 className="text-3xl font-bold tracking-tight">Validation and Precedent</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                    The shift to Low-Speed Electric Vehicles is supported by global market trends and a successful local implementation.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
+                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <CardHeader>
+                         <div className="flex items-center gap-4">
+                            <BarChart2 className="h-8 w-8 text-primary" />
+                            <CardTitle>Global Market Growth</CardTitle>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">The electric golf cart industry is projected to grow at a CAGR of 8.03% from 2025 to 2034, with the fastest growth in the Asia-Pacific region.</p>
+                    </CardContent>
+                </Card>
+                <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <CardHeader>
+                         <div className="flex items-center gap-4">
+                            <CheckCircle className="h-8 w-8 text-green-500" />
+                            <CardTitle>Proven Pakistani Model</CardTitle>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">The Aga Khan University Hospital in Karachi successfully implemented a solar-cum-electric shuttle service in 2013, saving 7.1 tons of CO2 annually.</p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container text-center">
             <h2 className="text-3xl font-bold tracking-tight">Interested in the Data?</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
