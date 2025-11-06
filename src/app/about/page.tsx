@@ -331,25 +331,43 @@ export default function AboutPage() {
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
-                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                 <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
+                    <div className="relative h-48 w-full">
+                        <Image
+                            src="https://images.unsplash.com/photo-1617025894987-5d4668b4d8e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Financial chart showing growth"
+                            data-ai-hint="market growth chart"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                     <CardHeader>
                          <div className="flex items-center gap-4">
                             <BarChart2 className="h-8 w-8 text-primary" />
                             <CardTitle>Global Market Growth</CardTitle>
                         </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                         <p className="text-muted-foreground">The electric golf cart industry is projected to grow at a CAGR of 8.03% from 2025 to 2034, with the fastest growth in the Asia-Pacific region.</p>
                     </CardContent>
                 </Card>
-                <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <Card className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col">
+                    <div className="relative h-48 w-full">
+                        <Image
+                            src="https://images.unsplash.com/photo-1620358172945-4a5e35446050?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8c29sYXIlMjBzaHV0dGxlfGVufDB8fHx8MTcyMjMwODcyN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="A solar-powered electric shuttle"
+                            data-ai-hint="solar shuttle"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                     <CardHeader>
                          <div className="flex items-center gap-4">
                             <CheckCircle className="h-8 w-8 text-green-500" />
                             <CardTitle>Proven Pakistani Model</CardTitle>
                         </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                         <p className="text-muted-foreground">The Aga Khan University Hospital in Karachi successfully implemented a solar-cum-electric shuttle service in 2013, saving 7.1 tons of CO2 annually.</p>
                     </CardContent>
                 </Card>
