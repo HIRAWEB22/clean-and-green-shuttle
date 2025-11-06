@@ -50,9 +50,9 @@ export default function AboutPage() {
     <>
       <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1525923133991-23a5e069c1a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="A team working together on a project"
-          data-ai-hint="team collaboration"
+          src="https://images.unsplash.com/photo-1593349028458-09da355f3557?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="A winding road through a lush green landscape, symbolizing a sustainable journey."
+          data-ai-hint="sustainable journey road"
           fill
           className="object-cover"
           priority
@@ -109,9 +109,9 @@ export default function AboutPage() {
                 </div>
                  <div className="relative h-96 w-full rounded-xl overflow-hidden shadow-2xl group">
                     <Image
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib.rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Our Team"
-                        data-ai-hint="diverse team meeting"
+                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="A diverse team collaborating on a project with laptops and notes."
+                        data-ai-hint="innovative team working"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -357,10 +357,18 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
-        <div className="container text-center">
-            <h2 className="text-3xl font-bold tracking-tight">Interested in the Data?</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+      <AnimatedSection as="section" className="relative py-16 md:py-24 bg-secondary">
+         <Image
+          src="https://images.unsplash.com/photo-1516975080664-62f4a4345e85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Library books on a shelf"
+          data-ai-hint="library books"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="container text-center relative text-secondary-foreground">
+            <h2 className="text-3xl font-bold tracking-tight text-white">Interested in the Data?</h2>
+            <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
                 Our approach is backed by careful planning and analysis. Dive into the details of our strategy, market validation, and alignment with global goals.
             </p>
             <div className="mt-8">
@@ -373,5 +381,3 @@ export default function AboutPage() {
     </>
   );
 }
-
-    
