@@ -50,9 +50,9 @@ export default function AboutPage() {
     <>
       <AnimatedSection as="section" className="relative h-[60vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <Image
-          src="/images/image.png"
-          alt="Clean and Green shuttle on a scenic road"
-          data-ai-hint="shuttle bus road"
+          src="/images/image copy 9.png"
+          alt="Abstract green and yellow lines"
+          data-ai-hint="abstract pattern"
           fill
           className="object-cover"
           priority
