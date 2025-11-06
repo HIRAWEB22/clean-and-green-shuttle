@@ -4,6 +4,9 @@ import {
   Globe,
   Users,
   Lightbulb,
+  Rocket,
+  Sparkles,
+  Flag,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
@@ -84,8 +87,52 @@ export default function AboutPage() {
             </div>
         </div>
       </AnimatedSection>
-
+      
       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
+        <div className="container text-center max-w-5xl">
+            <h2 className="text-3xl font-bold tracking-tight">Our Journey: From Idea to Impact</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our project started with a simple question: How can we make our campus more accessible, sustainable, and connected? This is our story.
+            </p>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <CardHeader className="items-center">
+                        <div className="p-4 bg-secondary rounded-full">
+                            <Sparkles className="h-10 w-10 text-primary" />
+                        </div>
+                        <CardTitle className="mt-4 text-xl">The Idea (2023)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">Born from a need to address rising transport costs and safety concerns, the concept of a dedicated, clean shuttle service was developed.</p>
+                    </CardContent>
+                </Card>
+                 <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <CardHeader className="items-center">
+                        <div className="p-4 bg-secondary rounded-full">
+                            <Flag className="h-10 w-10 text-primary" />
+                        </div>
+                        <CardTitle className="mt-4 text-xl">The Pilot (2024)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">We launched our first electric shuttles, testing routes and gathering invaluable feedback from students and staff to refine our service.</p>
+                    </CardContent>
+                </Card>
+                 <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <CardHeader className="items-center">
+                        <div className="p-4 bg-secondary rounded-full">
+                            <Rocket className="h-10 w-10 text-primary" />
+                        </div>
+                        <CardTitle className="mt-4 text-xl">The Future (2025+)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-muted-foreground">Our vision is to expand the fleet, integrate AI-powered route optimization, and set a new standard for campus mobility.</p>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container text-center">
             <h2 className="text-3xl font-bold tracking-tight">Interested in the Data?</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
