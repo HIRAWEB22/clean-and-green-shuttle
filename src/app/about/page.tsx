@@ -1,4 +1,5 @@
 
+"use client";
 import Image from 'next/image';
 import {
   Globe,
@@ -13,10 +14,34 @@ import {
   DollarSign,
   BarChart2,
   CheckCircle,
+  Leaf,
+  Wind,
+  Mountain
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
 import Link from 'next/link';
+import { AnimatedCounter } from '@/components/animated-counter';
+import {
+  Bar,
+  BarChart as RechartsBarChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+} from "recharts";
+import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+
+const chartData = [
+  { type: "CO₂ Emissions (g/km)", fuel: 147, electric: 0 },
+  { type: "Running Cost (per km)", fuel: 8.5, electric: 2.1 },
+  { type: "Noise Level (dB)", fuel: 75, electric: 45 },
+];
+
+const chartConfig = {
+  fuel: { label: "Fuel Vehicle", color: "hsl(var(--muted-foreground))" },
+  electric: { label: "Electric Shuttle", color: "hsl(var(--primary))" },
+} satisfies ChartConfig;
 
 
 export default function AboutPage() {
@@ -91,6 +116,116 @@ export default function AboutPage() {
                     />
                 </div>
             </div>
+        </div>
+      </AnimatedSection>
+      
+      <AnimatedSection as="section" className="py-12 md:py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Our Impact By The Numbers</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our commitment to sustainability and efficiency yields measurable results that benefit the entire campus community.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="flex flex-col items-center">
+                  <Mountain className="h-8 w-8 text-primary" />
+                  <CardTitle className="mt-4">CO₂ Saved (Annually)</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-5xl font-bold text-primary">
+                    <AnimatedCounter targetValue={28} />+ tons
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    Equivalent to planting over 450 trees.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="flex flex-col items-center">
+                  <Users className="h-8 w-8 text-primary" />
+                  <CardTitle className="mt-4">Students Served</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-5xl font-bold text-primary">
+                    <AnimatedCounter targetValue={5000} />+
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    Providing reliable daily transport across campus.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader className="flex flex-col items-center">
+                  <Leaf className="h-8 w-8 text-primary" />
+                  <CardTitle className="mt-4">Noise Pollution Reduction</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-5xl font-bold text-primary">
+                    <AnimatedCounter targetValue={30} />%
+                  </div>
+                  <p className="mt-2 text-muted-foreground">
+                    Creating a quieter, more peaceful learning environment.
+                  </p>
+                </CardContent>
+              </Card>
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      <AnimatedSection as="section" className="py-12 md:py-20 bg-secondary">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 className="text-3xl font-bold">A Smarter Choice: Electric vs. Fuel</h2>
+                <p className="mt-4 text-muted-foreground text-lg">
+                    Our electric shuttles aren't just a green alternative; they're a more efficient and cost-effective one. Here's a direct comparison against traditional fuel-powered vehicles.
+                </p>
+                <div className="mt-8 space-y-4">
+                    <div className="flex items-start gap-4">
+                        <div className="bg-primary/20 text-primary p-3 rounded-full">
+                            <Mountain className="h-6 w-6"/>
+                        </div>
+                        <div>
+                            <h4 className="font-semibold">Zero Tailpipe Emissions</h4>
+                            <p className="text-muted-foreground">By producing no harmful exhaust fumes, our shuttles directly improve campus air quality and reduce our carbon footprint.</p>
+                        </div>
+                    </div>
+                     <div className="flex items-start gap-4">
+                        <div className="bg-primary/20 text-primary p-3 rounded-full">
+                            <DollarSign className="h-6 w-6"/>
+                        </div>
+                        <div>
+                            <h4 className="font-semibold">Significantly Lower Operating Costs</h4>
+                            <p className="text-muted-foreground">With cheaper electricity and reduced maintenance needs, our electric fleet is a financially sustainable asset for the university.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Card className="shadow-lg">
+                <CardHeader>
+                    <CardTitle>Performance Comparison</CardTitle>
+                </CardHeader>
+                <CardContent>
+                <ChartContainer config={chartConfig} className="h-[300px] w-full">
+                    <RechartsBarChart data={chartData} layout="vertical" margin={{ left: 20 }}>
+                    <CartesianGrid horizontal={false} />
+                    <YAxis
+                        dataKey="type"
+                        type="category"
+                        tickLine={false}
+                        axisLine={false}
+                        tickMargin={10}
+                        width={140}
+                        className="text-sm text-muted-foreground"
+                    />
+                    <XAxis type="number" hide />
+                    <RechartsBarChart dataKey="fuel" fill="var(--color-fuel)" radius={4} />
+                    <RechartsBarChart dataKey="electric" fill="var(--color-electric)" radius={4} />
+                    </RechartsBarChart>
+                </ChartContainer>
+                </CardContent>
+            </Card>
         </div>
       </AnimatedSection>
 
