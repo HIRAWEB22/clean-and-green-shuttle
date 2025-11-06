@@ -184,8 +184,8 @@ export default function AboutPage() {
                 </p>
                 <div className="mt-8 space-y-4">
                     <div className="flex items-start gap-4">
-                        <div className="bg-primary/20 text-primary p-3 rounded-full">
-                            <Mountain className="h-6 w-6"/>
+                        <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
+                            <Mountain className="h-6 w-6 text-green-500"/>
                         </div>
                         <div>
                             <h4 className="font-semibold">Zero Tailpipe Emissions</h4>
@@ -193,8 +193,8 @@ export default function AboutPage() {
                         </div>
                     </div>
                      <div className="flex items-start gap-4">
-                        <div className="bg-primary/20 text-primary p-3 rounded-full">
-                            <DollarSign className="h-6 w-6"/>
+                        <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+                            <DollarSign className="h-6 w-6 text-yellow-500"/>
                         </div>
                         <div>
                             <h4 className="font-semibold">Significantly Lower Operating Costs</h4>
@@ -222,7 +222,7 @@ export default function AboutPage() {
                     />
                     <XAxis type="number" hide />
                     <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-                    <Legend content={<ChartLegendContent />} />
+                    <ChartLegend content={<ChartLegendContent />} />
                     <Bar dataKey="fuel" fill="var(--color-fuel)" radius={4} />
                     <Bar dataKey="electric" fill="var(--color-electric)" radius={4} />
                   </RechartsBarChart>
@@ -373,3 +373,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+    
