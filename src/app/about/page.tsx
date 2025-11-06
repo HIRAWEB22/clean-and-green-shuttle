@@ -10,6 +10,7 @@ import {
   FileCheck,
   Scaling,
   RefreshCw,
+  DollarSign,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/home/animated-section';
@@ -90,8 +91,54 @@ export default function AboutPage() {
             </div>
         </div>
       </AnimatedSection>
-      
+
       <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
+        <div className="container max-w-5xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight">Our Solution: A Triple Bottom Line Framework</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our electric fleet delivers social, environmental, and financial benefits, measured by the Triple Bottom Line (TBL) framework. This positions the project as a strategic asset that reduces long-term costs.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardHeader className="items-center">
+                <div className="p-4 bg-secondary rounded-full">
+                  <Users className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="mt-4 text-xl">People (Well-being)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Enhancing student well-being, safety, and providing equitable access for all, including those with disabilities.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardHeader className="items-center">
+                <div className="p-4 bg-secondary rounded-full">
+                  <Globe className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="mt-4 text-xl">Planet (Sustainability)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Reducing our carbon footprint and contributing to a sustainable campus environment for future generations.</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <CardHeader className="items-center">
+                <div className="p-4 bg-secondary rounded-full">
+                  <DollarSign className="h-10 w-10 text-primary" />
+                </div>
+                <CardTitle className="mt-4 text-xl">Profit (Financial Stability)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Creating a financially stable, efficient, and scalable service that reduces long-term operational costs.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
         <div className="container text-center max-w-5xl">
             <h2 className="text-3xl font-bold tracking-tight">Our Journey: From Idea to Impact</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -100,42 +147,42 @@ export default function AboutPage() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-secondary rounded-full">
+                        <div className="p-4 bg-background rounded-full">
                             <FileCheck className="h-10 w-10 text-primary" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase I: Pilot Program</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Deploy 4 LSVs and 2 chargers on high-demand routes, establishing baseline metrics for cost, utilization, and student satisfaction.</p>
+                        <p className="text-muted-foreground">Deploy 4 LSVs on high-demand routes, establishing baseline metrics for cost, utilization, and student satisfaction.</p>
                     </CardContent>
                 </Card>
                  <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-secondary rounded-full">
+                        <div className="p-4 bg-background rounded-full">
                             <Scaling className="h-10 w-10 text-primary" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase II: Expansion</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Scale the fleet to 10 units, implement a full multi-level revenue model, and research solar integration to optimize performance.</p>
+                        <p className="text-muted-foreground">Scale the fleet, implement a full multi-level revenue model, and research solar integration to optimize performance.</p>
                     </CardContent>
                 </Card>
                  <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     <CardHeader className="items-center">
-                        <div className="p-4 bg-secondary rounded-full">
+                        <div className="p-4 bg-background rounded-full">
                             <RefreshCw className="h-10 w-10 text-primary" />
                         </div>
                         <CardTitle className="mt-4 text-xl">Phase III: Integration</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Achieve financial self-sufficiency, explore local manufacturing partnerships, and integrate operational data into academic research.</p>
+                        <p className="text-muted-foreground">Achieve financial self-sufficiency, explore local manufacturing partnerships, and integrate data into academic research.</p>
                     </CardContent>
                 </Card>
             </div>
         </div>
       </AnimatedSection>
 
-      <AnimatedSection as="section" className="py-16 md:py-24 bg-secondary">
+      <AnimatedSection as="section" className="py-16 md:py-24 bg-background">
         <div className="container text-center">
             <h2 className="text-3xl font-bold tracking-tight">Interested in the Data?</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
