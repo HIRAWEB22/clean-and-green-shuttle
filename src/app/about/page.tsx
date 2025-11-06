@@ -337,8 +337,9 @@ export default function AboutPage() {
                             src="/images/image copy 6.png"
                             alt="Financial chart showing growth"
                             data-ai-hint="market growth chart"
-                            fill
-                            className="object-cover"
+                            width={600}
+                            height={400}
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <CardHeader>
@@ -357,8 +358,9 @@ export default function AboutPage() {
                             src="/images/image copy 7.png"
                             alt="A solar-powered electric shuttle"
                             data-ai-hint="solar shuttle"
-                            fill
-                            className="object-cover"
+                            width={600}
+                            height={400}
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <CardHeader>
@@ -399,5 +401,3 @@ export default function AboutPage() {
     </>
   );
 }
-
-    
